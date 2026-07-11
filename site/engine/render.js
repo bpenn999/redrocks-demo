@@ -213,6 +213,12 @@ function home() {
     <div class="videoframe"><iframe src="https://www.youtube-nocookie.com/embed/${esc(A.videoId)}" title="${esc(A.videoTitle)}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
   </div></div></section>`;
 
+  const HS = data.healthSnapshot;
+  const health = HS ? `<section class="section"><div class="wrap">
+    <div class="center reveal"><span class="eyebrow">Your local health picture</span><h2>The ${esc(HS.county)} health picture</h2><p class="lead">${esc(HS.intro)}</p></div>
+    <div class="grid cols-3" style="margin-top:40px">${HS.stats.map(s => `<div class="card hover reveal" style="text-align:center"><div style="font-family:var(--font-head);font-weight:800;font-size:2.6rem;color:var(--accent);line-height:1" data-countup="${esc(s.value)}">${esc(s.value)}</div><p style="margin:10px 0 0;font-weight:600">${esc(s.label)}</p><p style="margin:2px 0 0;font-size:.8rem;color:var(--muted)">of ${esc(HS.county)} adults (${esc(HS.year)})</p></div>`).join('')}</div>
+    <p class="center" style="margin-top:18px;font-size:.82rem;color:var(--muted)">Source: <a href="${esc(HS.url)}" rel="nofollow">${esc(HS.source)}</a>, ${esc(HS.year)}. Rates are modeled county-level estimates for adults.</p>
+  </div></section>` : '';
   const podcast = A.podcast ? `<section class="section tight"><div class="wrap"><div class="ctaband reveal podband" style="background:linear-gradient(135deg,#1c8ba6,var(--primary-deep))">
     <div style="font-size:3.2rem" aria-hidden="true">🎙️</div>
     <div><span class="eyebrow" style="color:#9fe8f2">Since ${esc(A.podcast.since)}</span><h2 style="margin-bottom:6px">${esc(A.podcast.name)}</h2><p style="margin:0;text-align:left;max-width:64ch">${esc(A.podcast.tagline)} Hosted by ${esc(A.podcast.host)}, each episode answers real listener questions and keeps you current on Medicare rules, policies, and coverage choices.</p></div>
@@ -229,8 +235,8 @@ function home() {
     title: `${A.name} — Medicare, ACA & Senior Insurance in ${A.city}`,
     desc: `${A.tagline}. Independent, local help comparing Medicare Advantage, Medigap, Part D and ACA plans. No cost to compare.`,
     active: '/',
-    schema: [localBusiness(), faqSchema(data.faq)],
-    body: hero + trustbar + services + databand + how + video + podcast + faq + cta,
+    schema: [localBusiness(), faqSchema(data.faq)].concat(data.healthSnapshot ? [{ '@context': 'https://schema.org', '@type': 'Dataset', name: `CDC PLACES ${data.healthSnapshot.county} health estimates (${data.healthSnapshot.year})`, description: `County-level adult health condition prevalence for ${data.healthSnapshot.county}, Utah`, creator: { '@type': 'Organization', name: 'CDC PLACES', url: 'https://www.cdc.gov/places/' }, license: 'https://creativecommons.org/publicdomain/zero/1.0/', isAccessibleForFree: true }] : []),
+    body: hero + trustbar + services + databand + health + how + video + podcast + faq + cta,
     extraJs: `<script src="/experiences/borealis.js" defer></script>`
   });
 }
