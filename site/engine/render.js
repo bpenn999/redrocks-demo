@@ -55,20 +55,41 @@ function nav(active) {
 }
 
 function footer() {
-  const svc = data.productLines.map(p => `<li><a href="/services/${p.slug}/">${esc(p.name)}</a></li>`).join('');
-  const learn = data.learn.slice(0, 6).map(l => `<li><a href="/learn/${l.slug}/">${esc(l.title.split(':')[0])}</a></li>`).join('');
+  const COLS = [
+    { h: 'Company', links: [
+      ['About Us', '/about/'], ['Meet the Team', '/about/'], ['Services', '/services/'],
+      ['Locations', '/contact/'], ['Blog & Resources', '/learn/'], ['Reviews', '/about/'],
+      ['License Verification', '/contact/'], ['Medicare Forms', '/tools/'], ['FAQ', '/#faq'],
+      ['Contact', '/contact/'], ['Privacy Policy', '/contact/'] ] },
+    { h: 'Medicare 101', links: [
+      ['Medicare Guide', '/learn/medicare-parts-explained/'], ['What Is Medicare?', '/learn/medicare-parts-explained/'],
+      ['Medicare vs Medicaid', '/learn/'], ['Medicare Eligibility', '/tools/#tool-eligibility'],
+      ['Medicare Enrollment Periods', '/learn/when-to-enroll-medicare/'], ['How to Enroll in Medicare', '/learn/when-to-enroll-medicare/'],
+      ['Understanding Medicare Part D', '/services/part-d-prescription/'] ] },
+    { h: 'Plans & Coverage', links: [
+      ['Medicare Advantage Plans', '/services/medicare-advantage/'], ['Medicare Supplement (Medigap) Plans', '/services/medicare-supplement/'],
+      ['Part D Prescription Drug Plans', '/services/part-d-prescription/'], ['ACA Health Insurance (Under 65)', '/services/aca-marketplace/'],
+      ['Medicare HMO Plans', '/services/medicare-advantage/'], ['Medicare PPO Plans', '/services/medicare-advantage/'],
+      ['Special Needs Plans (SNPs)', '/services/medicare-advantage/'] ] },
+    { h: 'Free Tools', links: [
+      ['Medicare Cost Calculator', '/tools/#tool-cost-estimator'], ['MA vs Medigap Quiz', '/tools/#tool-ma-vs-medigap'],
+      ['Medicare Eligibility Checker', '/tools/#tool-eligibility'], ['Part B Penalty Estimator', '/tools/#tool-part-b-penalty'],
+      ['Part D Penalty Estimator', '/tools/#tool-part-d-penalty'], ['IRMAA Bracket Lookup', '/tools/#tool-irmaa'],
+      ['Enrollment Timeline', '/learn/when-to-enroll-medicare/'] ] }
+  ];
+  const cols = COLS.map(c => `<div><h5>${esc(c.h)}</h5><ul>${c.links.map(([l, h]) => `<li><a href="${h}">${esc(l)}</a></li>`).join('')}</ul></div>`).join('');
+  const contact = `<div><h5>Contact</h5><ul class="foot-contact">
+    ${phone ? `<li><a href="tel:${esc(phone.replace(/[^0-9+]/g, ''))}">${esc(phone)}</a></li>` : ''}
+    ${email ? `<li><a href="mailto:${esc(email)}">${esc(email)}</a></li>` : ''}
+    <li>${esc(A.street || A.address)}</li><li>${esc([A.locality, A.region, A.postal].filter(Boolean).join(', '))}</li>
+    <li>${esc(A.hours)}</li>
+    ${A.reviews ? `<li style="color:#e8a13a;font-weight:600">★ ${esc(A.reviews.rating)} · ${esc(A.reviews.count)} ${esc(A.reviews.source)} reviews</li>` : ''}
+  </ul></div>`;
   return `<footer class="site"><div class="wrap">
+  <div class="foot-brand"><span class="logo">${ICEBERG}</span><div><b>${esc(A.name)}</b>${A.formerly ? `<span style="font-style:italic">${esc(A.formerly)}</span>` : ''}</div></div>
   <div class="foot-grid">
-    <div>
-      <div class="brand" style="color:#fff;margin-bottom:12px"><span class="logo">${ICEBERG}</span><b style="color:#fff">${esc(A.shortName)}<span style="color:rgba(255,255,255,.6)">${esc(A.city)}</span></b></div>
-      ${A.formerly ? `<p style="font-size:.82rem;font-style:italic;color:rgba(255,255,255,.6);margin-bottom:8px">${esc(A.formerly)}</p>` : ''}
-      <p style="font-size:.92rem;max-width:34ch">${esc(A.tagline)}.</p>
-      ${phone ? `<p style="font-size:.92rem"><a href="tel:${esc(phone.replace(/[^0-9+]/g,''))}">${esc(phone)}</a></p>` : ''}
-      ${email ? `<p style="font-size:.92rem"><a href="mailto:${esc(email)}">${esc(email)}</a></p>` : ''}
-    </div>
-    <div><h5>Services</h5><ul>${svc}</ul></div>
-    <div><h5>Learn</h5><ul>${learn}</ul></div>
-    <div><h5>Company</h5><ul><li><a href="/about/">About Christian</a></li><li><a href="/tools/">Free tools</a></li><li><a href="/contact/">Contact</a></li><li><a href="https://www.medicare.gov" rel="nofollow">Medicare.gov</a></li></ul></div>
+    ${cols}
+    ${contact}
   </div>
   <div class="disclaimer">
     <p><strong>${esc(A.name)}</strong>${A.formerly ? ` (${esc(A.formerly)})` : ''} &middot; ${esc(A.address)} &middot; NPN ${esc(A.npn)} &middot; ${esc(A.hours)}${A.reviews ? ` &middot; ★ ${esc(A.reviews.rating)} (${esc(A.reviews.count)} ${esc(A.reviews.source)} reviews)` : ''}</p>
@@ -190,7 +211,7 @@ function home() {
     <div class="videoframe"><iframe src="https://www.youtube-nocookie.com/embed/${esc(A.videoId)}" title="${esc(A.videoTitle)}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
   </div></div></section>`;
 
-  const faq = `<section class="section"><div class="wrap" style="max-width:820px">
+  const faq = `<section class="section" id="faq"><div class="wrap" style="max-width:820px">
     <div class="center reveal"><span class="eyebrow">Common questions</span><h2>Straight answers</h2></div>
     <div class="faq" style="margin-top:36px">${data.faq.map(f => `<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('')}</div>
   </div></section>`;
