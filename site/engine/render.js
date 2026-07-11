@@ -213,7 +213,7 @@ function home() {
     <div class="videoframe"><iframe src="https://www.youtube-nocookie.com/embed/${esc(A.videoId)}" title="${esc(A.videoTitle)}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
   </div></div></section>`;
 
-  const podcast = A.podcast ? `<section class="section tight"><div class="wrap"><div class="ctaband reveal" style="background:linear-gradient(135deg,#1c8ba6,var(--primary-deep));text-align:left;display:grid;grid-template-columns:auto 1fr auto;gap:26px;align-items:center">
+  const podcast = A.podcast ? `<section class="section tight"><div class="wrap"><div class="ctaband reveal podband" style="background:linear-gradient(135deg,#1c8ba6,var(--primary-deep))">
     <div style="font-size:3.2rem" aria-hidden="true">🎙️</div>
     <div><span class="eyebrow" style="color:#9fe8f2">Since ${esc(A.podcast.since)}</span><h2 style="margin-bottom:6px">${esc(A.podcast.name)}</h2><p style="margin:0;text-align:left;max-width:64ch">${esc(A.podcast.tagline)} Hosted by ${esc(A.podcast.host)}, each episode answers real listener questions and keeps you current on Medicare rules, policies, and coverage choices.</p></div>
     <a class="btn btn-accent" href="${esc(A.podcast.url)}" target="_blank" rel="noopener" style="white-space:nowrap">Listen to the podcast →</a>
@@ -286,7 +286,7 @@ function servicePage(p) {
   const svcSchema = { '@context': 'https://schema.org', '@type': 'Service', name: p.name, serviceType: p.name, description: p.short, areaServed: A.serviceArea, provider: localBusiness(), author: orgAuthor };
   const body = `${crumbs(trail)}
   <section class="pagehead"><div class="wrap"><span class="eyebrow">Service</span><h1>${esc(p.name)}</h1><p class="lead">${esc(p.short)}</p></div></section>
-  <section class="section"><div class="wrap" style="display:grid;grid-template-columns:1fr 320px;gap:44px;align-items:start">
+  <section class="section"><div class="wrap split-side">
     <div class="prose">${p.long.map(par => `<p>${esc(par)}</p>`).join('')}
       <h2>What's included</h2><ul>${p.bullets.map(b => `<li>${esc(b)}</li>`).join('')}</ul>
       <h2>Who it's for</h2><p>${esc(p.who)}</p>
@@ -387,7 +387,7 @@ function contactPage() {
   const trail = [['Home', '/'], ['Contact', '/contact/']];
   const body = `${crumbs(trail)}
   <section class="pagehead"><div class="wrap"><span class="eyebrow">Contact</span><h1>Talk to a licensed advisor</h1><p class="lead">Free, local, no pressure. Reach out and ${esc(A.advisor.split(' ')[0])} will help you compare your options.</p></div></section>
-  <section class="section"><div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start">
+  <section class="section"><div class="wrap split2">
     <div class="card">
       <h3>Send a message</h3>
       <form onsubmit="event.preventDefault();this.querySelector('.out').style.display='block';" >
