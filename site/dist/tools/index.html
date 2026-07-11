@@ -1,0 +1,76 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Medicare Tools &amp; Calculators — Christian Brindle Insurance</title>
+<meta name="description" content="Free Medicare calculators: eligibility/IEP, Part B &amp; Part D late penalties, IRMAA lookup, cost estimator, and an MA-vs-Medigap quiz.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/designs/gridline.css">
+<style>:root{--ink:#0e2a3b;--primary:#1f7a8c;--primary-deep:#155e6e;--accent:#e4a11b;--bg:#f7fafb;--surface:#ffffff;--soft:#eef4f6;--line:#d7e3e8;--muted:#5b6b72;--font-head:'Poppins', 'Segoe UI', system-ui, sans-serif;--font-body:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"/"},{"@type":"ListItem","position":2,"name":"Tools","item":"/tools/"}]}</script>
+</head><body>
+<header class="nav"><div class="wrap nav-inner">
+  <a class="brand" href="/"><span class="logo" aria-hidden="true">CB</span><b>Christian Brindle Insurance<span>Salt Lake City, Utah</span></b></a>
+  <nav class="nav-links" aria-label="Primary"><a href="/">Home</a><a href="/services/">Services</a><a href="/learn/">Learn</a><a href="/tools/" aria-current="page">Tools</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav>
+  <div class="nav-cta"><a class="btn btn-primary" href="/contact/">Talk to a licensed advisor</a>
+  <button class="nav-toggle" aria-label="Menu">☰</button></div>
+  </div></header>
+<div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>Tools</span></nav></div>
+  <section class="pagehead"><div class="wrap"><span class="eyebrow">Free tools</span><h1>Medicare calculators</h1><p class="lead">Quick, private estimates — nothing is stored or sent. Year-stamped 2025, educational only.</p></div></section>
+  <section class="section"><div class="wrap"><div class="grid-tools">
+    <div class="tool" id="tool-eligibility"><h3>🗓️ Eligibility & IEP checker</h3><p style="color:var(--muted);font-size:.95rem">When does your Initial Enrollment Period open?</p>
+      <label for="elig-month">Birth month</label><select id="elig-month"><option value="">Select…</option><option value="1">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select>
+      <label for="elig-year">Birth year</label><input id="elig-year" type="number" placeholder="e.g. 1961" inputmode="numeric">
+      <div class="out" id="elig-out">Enter your birth month and year to see your window.</div></div>
+
+    <div class="tool" id="tool-cost-estimator"><h3>💵 Cost estimator</h3><p style="color:var(--muted);font-size:.95rem">Ballpark your yearly Medicare costs.</p>
+      <label for="ce-path">Coverage path</label><select id="ce-path"><option value="advantage">Medicare Advantage</option><option value="medigap">Medigap (Plan G) + Part D</option><option value="original">Original Medicare only</option></select>
+      <label for="ce-rx">Estimated yearly drug costs ($)</label><input id="ce-rx" type="text" inputmode="numeric" placeholder="e.g. 1200">
+      <div class="out" id="ce-out">Choose a path and drug estimate for a yearly figure.</div></div>
+
+    <div class="tool" id="tool-part-b-penalty"><h3>⏰ Part B late penalty</h3><p style="color:var(--muted);font-size:.95rem">Delaying Part B without other coverage adds a lifelong penalty.</p>
+      <label for="pb-months">Months you were eligible but not enrolled</label><input id="pb-months" type="number" inputmode="numeric" placeholder="e.g. 24">
+      <div class="out" id="pb-out">Enter months to estimate the penalty.</div></div>
+
+    <div class="tool" id="tool-part-d-penalty"><h3>💊 Part D late penalty</h3><p style="color:var(--muted);font-size:.95rem">Going without creditable drug coverage adds a penalty too.</p>
+      <label for="pd-months">Months without creditable drug coverage</label><input id="pd-months" type="number" inputmode="numeric" placeholder="e.g. 15">
+      <div class="out" id="pd-out">Enter months to estimate the penalty.</div></div>
+
+    <div class="tool" id="tool-irmaa"><h3>📊 IRMAA bracket lookup</h3><p style="color:var(--muted);font-size:.95rem">Higher incomes pay more for Parts B & D (2025, from 2023 income).</p>
+      <label for="irmaa-file">Filing status</label><select id="irmaa-file"><option value="single">Single</option><option value="married">Married filing jointly</option></select>
+      <label for="irmaa-magi">Modified Adjusted Gross Income ($)</label><input id="irmaa-magi" type="text" inputmode="numeric" placeholder="e.g. 120000">
+      <div class="out" id="irmaa-out">Enter your income to see your bracket.</div></div>
+
+    <div class="tool" id="tool-ma-vs-medigap"><h3>⚖️ MA-vs-Medigap quiz</h3><p style="color:var(--muted);font-size:.95rem">Five quick questions to see which path likely fits.</p>
+      <label>Do you travel or split time between states?</label><select><option value="">Select…</option><option value="-1">Yes, often</option><option value="1">Rarely</option></select>
+      <label>How important is the lowest monthly premium?</label><select><option value="">Select…</option><option value="1">Very important</option><option value="-1">I'll pay more for freedom</option></select>
+      <label>Do you want dental/vision/hearing extras built in?</label><select><option value="">Select…</option><option value="1">Yes</option><option value="-1">Not essential</option></select>
+      <label>Are you comfortable using a provider network?</label><select><option value="">Select…</option><option value="1">Yes</option><option value="-1">I want any doctor</option></select>
+      <label>Do you have ongoing health conditions?</label><select><option value="">Select…</option><option value="-1">Yes, several</option><option value="1">Not really</option></select>
+      <div class="out" id="quiz-out">Answer all 5 questions for a suggestion.</div></div>
+  </div>
+  <p class="disclaimer" style="border-top:1px solid var(--line);color:var(--muted);font-size:.78rem;margin-top:26px;padding-top:16px">The content on this site is for general educational purposes only and is not individualized insurance, tax, or legal advice. Plan availability, premiums, and benefits change every year — confirm current details before enrolling. We do not offer every plan available in your area. Currently we represent 76 organizations which offer 2,345 plans nationwide. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</p>
+  </div></section>
+<footer class="site"><div class="wrap">
+  <div class="foot-grid">
+    <div>
+      <div class="brand" style="color:#fff;margin-bottom:12px"><span class="logo">CB</span><b style="color:#fff">Christian Brindle Insurance<span style="color:rgba(255,255,255,.6)">Salt Lake City, Utah</span></b></div>
+      <p style="font-size:.92rem;max-width:34ch">Independent Medicare, ACA &amp; senior insurance help for Salt Lake City.</p>
+      
+      
+    </div>
+    <div><h5>Services</h5><ul><li><a href="/services/medicare-advantage/">Medicare Advantage (Part C)</a></li><li><a href="/services/medicare-supplement/">Medicare Supplement (Medigap)</a></li><li><a href="/services/part-d-prescription/">Part D Prescription Drug Plans</a></li><li><a href="/services/aca-marketplace/">ACA Health Insurance (Under 65)</a></li></ul></div>
+    <div><h5>Learn</h5><ul><li><a href="/learn/medicare-parts-explained/">Medicare Parts A, B, C, and D — explained in plain English</a></li><li><a href="/learn/when-to-enroll-medicare/">When can you enroll in Medicare? Every enrollment window, decoded</a></li><li><a href="/learn/advantage-vs-medigap/">Medicare Advantage vs. Medigap</a></li><li><a href="/learn/part-d-2000-cap/">The new $2,000 Part D drug cap</a></li><li><a href="/learn/irmaa-explained/">IRMAA</a></li><li><a href="/learn/medicare-in-salt-lake-city/">Medicare in Salt Lake City &amp; Utah</a></li></ul></div>
+    <div><h5>Company</h5><ul><li><a href="/about/">About Christian</a></li><li><a href="/tools/">Free tools</a></li><li><a href="/contact/">Contact</a></li><li><a href="https://www.medicare.gov" rel="nofollow">Medicare.gov</a></li></ul></div>
+  </div>
+  <div class="disclaimer">
+    <p><strong>Christian Brindle Insurance Services</strong> &middot; NPN [PLACEHOLDER — add NPN] &middot; Serving Salt Lake County, Utah County, Davis County, Weber County, Statewide Utah. Mon–Fri 9:00am–5:00pm MT</p>
+    <p>Christian Brindle Insurance Services is not connected with or endorsed by the United States government or the federal Medicare program. This is a solicitation for insurance. A licensed insurance agent may contact you.</p>
+    <p>We do not offer every plan available in your area. Currently we represent 76 organizations which offer 2,345 plans nationwide. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</p>
+    <p>Integrity Marketing Partners, LLC and its affiliates (“Integrity”) provide certain support and services to Christian Brindle Insurance Services, which operates independently as a licensed agency. Christian Brindle Insurance Services does not represent Integrity.</p>
+    <p>The content on this site is for general educational purposes only and is not individualized insurance, tax, or legal advice. Plan availability, premiums, and benefits change every year — confirm current details before enrolling.</p>
+    <p>&copy; 2026 Christian Brindle Insurance Services. All rights reserved. Reference model: <a href="https://eseniorinsurance.com" rel="nofollow">eseniorinsurance.com</a>.</p>
+  </div>
+  </div></footer>
+<script src="/assets/app.js" defer></script>
+<script src="/assets/calculators.js" defer></script>
+</body></html>

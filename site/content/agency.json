@@ -1,0 +1,246 @@
+{
+  "meta": {
+    "formula": "borealis × gridline × medicare-advantage",
+    "buildVersion": "v1",
+    "dataYear": "2025",
+    "reference": "https://eseniorinsurance.com",
+    "generatedNote": "Figures are year-stamped and estimate-framed. Live plan counts wire to plan_quoter.medicare_plans (THE BRAIN) when approved."
+  },
+  "agency": {
+    "name": "Christian Brindle Insurance Services",
+    "shortName": "Christian Brindle Insurance",
+    "tagline": "Independent Medicare, ACA & senior insurance help for Salt Lake City",
+    "advisor": "Christian Brindle",
+    "advisorTitle": "Licensed Insurance Advisor",
+    "city": "Salt Lake City, Utah",
+    "serviceArea": ["Salt Lake County", "Utah County", "Davis County", "Weber County", "Statewide Utah"],
+    "phone": "[PLACEHOLDER — add Christian's phone]",
+    "email": "[PLACEHOLDER — add Christian's email]",
+    "address": "[PLACEHOLDER — add office address or 'Serving Salt Lake City & all of Utah']",
+    "npn": "[PLACEHOLDER — add NPN]",
+    "hours": "Mon–Fri 9:00am–5:00pm MT",
+    "videoId": "BS-HOCb1fRQ",
+    "videoTitle": "Meet Christian Brindle — how we help you choose Medicare with confidence",
+    "brandVoice": "Warm, plain-spoken, patient, and genuinely helpful. Explains Medicare like a trusted neighbor, never a salesperson. No jargon, no pressure.",
+    "cta": "Talk to a licensed advisor",
+    "bookingUrl": "#contact"
+  },
+  "brand": {
+    "note": "Light 'gridline' tech skin. Swap these tokens to match Christian's real logo palette once provided.",
+    "ink": "#0e2a3b",
+    "primary": "#1f7a8c",
+    "primaryDeep": "#155e6e",
+    "accent": "#e4a11b",
+    "bg": "#f7fafb",
+    "surface": "#ffffff",
+    "soft": "#eef4f6",
+    "line": "#d7e3e8",
+    "muted": "#5b6b72",
+    "fontHead": "'Poppins', 'Segoe UI', system-ui, sans-serif",
+    "fontBody": "'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+  },
+  "compliance": {
+    "tpmo": "We do not offer every plan available in your area. Currently we represent 76 organizations which offer 2,345 plans nationwide. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.",
+    "integrity": "Integrity Marketing Partners, LLC and its affiliates (“Integrity”) provide certain support and services to Christian Brindle Insurance Services, which operates independently as a licensed agency. Christian Brindle Insurance Services does not represent Integrity.",
+    "nonAffiliation": "Christian Brindle Insurance Services is not connected with or endorsed by the United States government or the federal Medicare program. This is a solicitation for insurance. A licensed insurance agent may contact you.",
+    "informational": "The content on this site is for general educational purposes only and is not individualized insurance, tax, or legal advice. Plan availability, premiums, and benefits change every year — confirm current details before enrolling.",
+    "tcpa": "By submitting your information you agree that a licensed insurance agent may call, text, or email you about Medicare and senior insurance options. Consent is not a condition of purchase. Message and data rates may apply."
+  },
+  "trust": {
+    "carriers": ["UnitedHealthcare", "Humana", "Aetna", "Cigna", "Regence BlueCross BlueShield of Utah", "SelectHealth", "Mutual of Omaha", "Wellcare"],
+    "points": [
+      { "stat": "100%", "label": "Independent — we work for you, not one carrier" },
+      { "stat": "$0", "label": "Our help costs you nothing to compare plans" },
+      { "stat": "AEP", "label": "Annual review every fall so your plan still fits" }
+    ]
+  },
+  "marketData": {
+    "note": "Year-stamped, .gov / KFF sourced. Estimate-framed. Salt Lake County live counts populate from THE BRAIN quote funnel.",
+    "stats": [
+      { "value": "43", "label": "Medicare Advantage plans available on average to a Utah beneficiary (2025)", "source": "KFF Medicare Advantage 2025", "url": "https://www.kff.org/medicare/" },
+      { "value": "$185.00", "label": "Standard Part B monthly premium (2025)", "source": "CMS.gov", "url": "https://www.cms.gov/newsroom/fact-sheets/2025-medicare-parts-b-premiums-and-deductibles" },
+      { "value": "$257", "label": "Annual Part B deductible (2025)", "source": "CMS.gov", "url": "https://www.cms.gov/newsroom/fact-sheets/2025-medicare-parts-b-premiums-and-deductibles" },
+      { "value": "$1,676", "label": "Part A hospital deductible per benefit period (2025)", "source": "CMS.gov", "url": "https://www.cms.gov/newsroom/fact-sheets/2025-medicare-parts-a-premiums-and-deductibles" },
+      { "value": "$2,000", "label": "New Part D annual out-of-pocket cap (2025, Inflation Reduction Act)", "source": "Medicare.gov", "url": "https://www.medicare.gov/" },
+      { "value": "$36.78", "label": "National base beneficiary premium used for Part D late penalty (2025)", "source": "CMS.gov", "url": "https://www.cms.gov/" }
+    ]
+  },
+  "productLines": [
+    {
+      "slug": "medicare-advantage",
+      "name": "Medicare Advantage (Part C)",
+      "short": "All-in-one plans that bundle hospital, medical, and usually drug coverage — often with $0 premiums and extras like dental, vision, and hearing.",
+      "who": "Great for people who want one card, predictable copays, and built-in extras — and who are comfortable using a plan's provider network.",
+      "bullets": [
+        "Combines Part A, Part B, and usually Part D in one plan",
+        "Many $0-premium options in Salt Lake County (you still pay your Part B premium)",
+        "Extras Original Medicare doesn't cover: dental, vision, hearing, fitness, OTC allowance",
+        "Yearly out-of-pocket maximum protects you from runaway costs",
+        "Uses HMO or PPO networks — we check that your doctors are in-network"
+      ],
+      "long": [
+        "Medicare Advantage plans are offered by private insurers approved by Medicare and rolled into one plan you use instead of Original Medicare. In Salt Lake County the choices are wide, and the right plan depends far more on your doctors, your prescriptions, and how you like to get care than on the premium alone.",
+        "We start by listing your providers and medications, then compare every plan we offer against that exact list — checking network status, drug tiers, copays, and the yearly out-of-pocket maximum. A '$0 premium' plan is only a good deal if your doctors are in-network and your drugs are covered, and that is precisely what we verify before you enroll.",
+        "Because plans change every year, we review yours each fall during the Annual Enrollment Period (Oct 15 – Dec 7) so a benefit cut or formulary change never catches you by surprise."
+      ]
+    },
+    {
+      "slug": "medicare-supplement",
+      "name": "Medicare Supplement (Medigap)",
+      "short": "Standardized plans that pay the gaps in Original Medicare so you can see any doctor that accepts Medicare, nationwide, with very predictable costs.",
+      "who": "Ideal if you want maximum freedom to choose doctors, travel often, or prefer predictable bills over the lowest premium.",
+      "bullets": [
+        "Works alongside Original Medicare — no networks, any Medicare provider nationwide",
+        "Plan G and Plan N are the most popular for people new to Medicare",
+        "Very predictable out-of-pocket costs year to year",
+        "Pairs with a stand-alone Part D drug plan",
+        "Best pricing usually locks in during your 6-month Medigap Open Enrollment"
+      ],
+      "long": [
+        "Medicare Supplement (Medigap) policies are standardized by the federal government, so a Plan G from one carrier covers exactly the same gaps as a Plan G from another — the difference is price and company service. That makes shopping straightforward once you know which plan letter fits you.",
+        "The tradeoff versus Medicare Advantage is simple: a higher monthly premium in exchange for the freedom to see any doctor who accepts Medicare, nationwide, with little or no cost at the point of care. For people who travel, split time between states, or want to avoid network surprises, that peace of mind is worth it.",
+        "Timing matters. During your one-time 6-month Medigap Open Enrollment Period (starting the month you're 65 and enrolled in Part B), carriers cannot deny you or charge more for health conditions. We help you use that window well."
+      ]
+    },
+    {
+      "slug": "part-d-prescription",
+      "name": "Part D Prescription Drug Plans",
+      "short": "Stand-alone drug coverage that keeps your prescriptions affordable — now with a $2,000 yearly out-of-pocket cap.",
+      "who": "Anyone on Original Medicare or a Medigap plan who takes prescriptions, or who wants to avoid the lifelong late-enrollment penalty.",
+      "bullets": [
+        "Covers prescription drugs Original Medicare doesn't",
+        "New $2,000 annual out-of-pocket cap (2025) thanks to the Inflation Reduction Act",
+        "We match your exact drug list to the lowest-cost plan formulary",
+        "Avoids the Part D late-enrollment penalty that lasts as long as you have Part D",
+        "Optional Medicare Prescription Payment Plan spreads costs over the year"
+      ],
+      "long": [
+        "Part D plans are run by private insurers and each has its own formulary — the list of drugs it covers and the tier (and price) of each. Two people on the same medications can pay wildly different amounts depending on which plan they pick, which is why we compare plans against your specific prescriptions rather than guessing.",
+        "As of 2025, once your out-of-pocket drug spending hits $2,000 for the year, you pay $0 for covered drugs the rest of the year. That cap is a major change, and we make sure your plan and pharmacy choices take full advantage of it.",
+        "If you go without creditable drug coverage after your Initial Enrollment Period, Medicare adds a permanent late-enrollment penalty to your premium — so enrolling on time, even in a low-cost plan, protects you long-term."
+      ]
+    },
+    {
+      "slug": "aca-marketplace",
+      "name": "ACA Health Insurance (Under 65)",
+      "short": "Affordable Care Act Marketplace plans for Utahns who aren't yet on Medicare — with premium tax credits that lower what you pay each month.",
+      "who": "For individuals and families under 65 — early retirees, self-employed, and anyone without employer coverage who needs quality health insurance.",
+      "bullets": [
+        "Individual & family plans through the Health Insurance Marketplace (HealthCare.gov)",
+        "Premium tax credits (subsidies) can dramatically lower your monthly premium",
+        "Metal tiers — Bronze, Silver, Gold — to match your budget and expected use",
+        "Cost-sharing reductions on Silver plans for those who qualify",
+        "A smooth bridge to Medicare when you turn 65"
+      ],
+      "long": [
+        "If you're under 65 and don't have coverage through an employer, the Affordable Care Act Marketplace is where you'll find quality individual and family health plans. Many Utahns qualify for premium tax credits that lower the monthly cost — often by a lot — based on household income and size.",
+        "Plans are grouped into metal tiers: Bronze (lower premium, higher out-of-pocket), Silver (the sweet spot for anyone who qualifies for cost-sharing reductions), and Gold (higher premium, lower out-of-pocket). The right tier depends on how much care you expect to use and your budget. Enroll during Open Enrollment (Nov 1 – Jan 15) or a Special Enrollment Period after a qualifying life event.",
+        "We help early retirees and self-employed clients pick the right Marketplace plan now — and then plan the handoff to Medicare when they turn 65 so there's no gap and no penalty. For your full range of Marketplace options, you can also visit HealthCare.gov directly."
+      ]
+    }
+  ],
+  "learn": [
+    {
+      "slug": "medicare-parts-explained",
+      "title": "Medicare Parts A, B, C, and D — explained in plain English",
+      "category": "Basics",
+      "read": "7 min",
+      "excerpt": "The four parts of Medicare in one clear map: what each covers, what it costs, and how they fit together so you can choose with confidence.",
+      "body": [
+        { "h": "The four parts at a glance", "p": ["Medicare is built from four parts. Part A covers hospital stays. Part B covers doctor visits and outpatient care. Together, A and B are called Original Medicare. Part C (Medicare Advantage) is a private all-in-one alternative that bundles A, B, and usually D. Part D covers prescription drugs.", "You'll generally choose one of two paths: Original Medicare (A + B) usually paired with a Part D drug plan and often a Medigap supplement — or a Medicare Advantage plan (Part C) that rolls it together."], "list": ["Part A — hospital insurance (most people pay $0 premium)", "Part B — medical insurance ($185.00/mo standard, 2025)", "Part C — Medicare Advantage, a private bundle", "Part D — prescription drug coverage"] },
+        { "h": "What Part A and Part B cost in 2025", "p": ["Most people get premium-free Part A because they paid Medicare taxes while working. Part A still has a hospital deductible of $1,676 per benefit period in 2025. Part B has a standard premium of $185.00 per month and a $257 annual deductible in 2025; higher earners pay more through IRMAA.", "These numbers change every year, so always confirm the current figures at Medicare.gov before you enroll."] },
+        { "h": "Which path is right for you?", "p": ["There's no universally 'best' choice — it depends on your doctors, your prescriptions, your budget, and how you like to get care. Medigap offers freedom and predictability at a higher premium; Medicare Advantage offers low premiums and extras in exchange for using a network. A licensed advisor can map your specifics to the right path in about 20 minutes."] }
+      ]
+    },
+    {
+      "slug": "when-to-enroll-medicare",
+      "title": "When can you enroll in Medicare? Every enrollment window, decoded",
+      "category": "Enrollment",
+      "read": "6 min",
+      "excerpt": "IEP, AEP, OEP, and Special Enrollment Periods — what each one is, the exact dates, and which one applies to you right now.",
+      "body": [
+        { "h": "Your Initial Enrollment Period (IEP)", "p": ["Your first chance to enroll is a 7-month window around your 65th birthday: the 3 months before your birthday month, your birthday month, and the 3 months after. Enrolling in the three months before your birthday means coverage can start the month you turn 65."], "list": ["Starts 3 months before your 65th birthday month", "Includes your birthday month", "Ends 3 months after — 7 months total"] },
+        { "h": "Annual Enrollment Period (AEP): Oct 15 – Dec 7", "p": ["Every fall, anyone on Medicare can switch Medicare Advantage or Part D plans for the following year. This is the time to review your plan against next year's premiums, drug formularies, and provider networks — changes we catch during your annual review."] },
+        { "h": "Medicare Advantage Open Enrollment (Jan 1 – Mar 31)", "p": ["If you're already in a Medicare Advantage plan, you get one chance early in the year to switch to a different Advantage plan or return to Original Medicare (with a Part D plan)."] },
+        { "h": "Special Enrollment Periods (SEPs)", "p": ["Life events — moving, losing employer coverage, qualifying for Extra Help — can open a Special Enrollment Period outside the normal windows. If your situation changed, you may be able to enroll now; ask us to check."] }
+      ]
+    },
+    {
+      "slug": "advantage-vs-medigap",
+      "title": "Medicare Advantage vs. Medigap: how to actually decide",
+      "category": "Compare",
+      "read": "8 min",
+      "excerpt": "The real tradeoffs between an all-in-one Advantage plan and Original Medicare + a supplement — with a simple framework to choose.",
+      "body": [
+        { "h": "Two different philosophies", "p": ["Medicare Advantage trades a low (often $0) premium and built-in extras for using a provider network and variable copays. Medigap trades a higher monthly premium for the freedom to see any Medicare provider nationwide with very predictable costs. Neither is 'better' — they suit different lives."] },
+        { "h": "Choose Medicare Advantage if…", "p": [""], "list": ["You want the lowest premium and extras like dental, vision, and hearing", "Your doctors are in the plan's network", "You mostly get care locally", "You're comfortable with copays that vary by service"] },
+        { "h": "Choose Medigap + Part D if…", "p": [""], "list": ["You want to see any doctor that accepts Medicare, anywhere in the U.S.", "You travel or split time between states", "You prefer predictable bills over the lowest premium", "You want to avoid network and referral hassles"] },
+        { "h": "The timing catch most people miss", "p": ["Medigap's best pricing and guaranteed acceptance usually require enrolling during your 6-month Medigap Open Enrollment. Wait too long and carriers can medically underwrite you. If you're leaning Medigap, timing can matter more than the plan letter."] }
+      ]
+    },
+    {
+      "slug": "part-d-2000-cap",
+      "title": "The new $2,000 Part D drug cap: what it means for you",
+      "category": "Costs",
+      "read": "5 min",
+      "excerpt": "Starting in 2025, your out-of-pocket prescription costs are capped at $2,000 a year. Here's how the cap works and how to use it.",
+      "body": [
+        { "h": "What changed in 2025", "p": ["Thanks to the Inflation Reduction Act, Medicare Part D now caps your annual out-of-pocket drug spending at $2,000. Once you hit that limit, you pay $0 for covered drugs for the rest of the year. The old 'donut hole' coverage gap is gone."] },
+        { "h": "The Medicare Prescription Payment Plan", "p": ["You can also choose to spread your out-of-pocket drug costs across the year in monthly installments instead of paying a big bill at the pharmacy counter. This is optional and free to opt into — useful if your costs are front-loaded early in the year."] },
+        { "h": "How we help", "p": ["We compare your exact medication list against each plan's formulary and preferred pharmacies to find the lowest total cost — not just the lowest premium. The cap protects you, but plan choice still decides how quickly and cheaply you get there."] }
+      ]
+    },
+    {
+      "slug": "irmaa-explained",
+      "title": "IRMAA: why some people pay more for Medicare (and how to plan)",
+      "category": "Costs",
+      "read": "6 min",
+      "excerpt": "Higher-income beneficiaries pay an Income-Related Monthly Adjustment Amount on Parts B and D. Here's how it's calculated and what to do.",
+      "body": [
+        { "h": "What IRMAA is", "p": ["IRMAA is a surcharge added to your Part B and Part D premiums if your income is above certain thresholds. Social Security determines it using your Modified Adjusted Gross Income (MAGI) from your tax return two years prior — so your 2025 IRMAA is based on your 2023 income."] },
+        { "h": "The two-year lookback", "p": ["Because of the lookback, a one-time income spike (selling a home, a Roth conversion, capital gains) can raise your Medicare premiums two years later. Planning around that timing can save real money."] },
+        { "h": "Life-changing events", "p": ["If your income dropped due to a life-changing event — retirement, loss of a pension, divorce, death of a spouse — you can file Form SSA-44 to ask Social Security to use your more recent income instead. Many people who qualify never file it."] }
+      ]
+    },
+    {
+      "slug": "medicare-in-salt-lake-city",
+      "title": "Medicare in Salt Lake City & Utah: a local guide",
+      "category": "Local",
+      "read": "6 min",
+      "excerpt": "What Medicare looks like on the Wasatch Front — plan availability, local networks, and how to get unbiased help nearby.",
+      "body": [
+        { "h": "A strong plan market on the Wasatch Front", "p": ["Utah beneficiaries have access to a robust Medicare Advantage market — on average dozens of plans (about 43 in 2025, per KFF) — plus the full range of Medigap and Part D options. Salt Lake County in particular offers wide choice, which is great news and also why comparing carefully matters."] },
+        { "h": "Local networks and hospitals", "p": ["Advantage plan networks in Utah are often built around major systems like Intermountain Health and University of Utah Health. Which plan is right depends on where you already get care — we verify your specific doctors and facilities are in-network before you enroll."] },
+        { "h": "Getting unbiased local help", "p": ["As an independent, Salt Lake City–based advisor, Christian Brindle works with many carriers rather than one — so the recommendation is based on your needs, not a single company's lineup. Comparing your options costs you nothing."] }
+      ]
+    },
+    {
+      "slug": "aca-marketplace-utah",
+      "title": "ACA Marketplace in Utah: subsidies, metal tiers, and enrolling",
+      "category": "ACA",
+      "read": "6 min",
+      "excerpt": "Under 65 and need coverage? Here's how Affordable Care Act plans, premium tax credits, and Utah enrollment actually work.",
+      "body": [
+        { "h": "Who the Marketplace is for", "p": ["The ACA Health Insurance Marketplace covers people under 65 who don't have employer or government coverage — early retirees, self-employed Utahns, gig workers, and families in between jobs. You shop and enroll through HealthCare.gov, or with an advisor who can compare plans with you."] },
+        { "h": "Premium tax credits lower your cost", "p": ["Most Marketplace enrollees qualify for premium tax credits based on household income and size — subsidies that reduce your monthly premium, sometimes dramatically. Silver plans can also unlock cost-sharing reductions that lower your deductibles and copays if you qualify."] },
+        { "h": "Metal tiers and enrollment windows", "p": ["Plans come in Bronze, Silver, and Gold tiers that trade premium against out-of-pocket costs. Open Enrollment runs Nov 1 – Jan 15; outside that, a qualifying life event (losing coverage, moving, marriage, a new baby) can open a Special Enrollment Period."], "list": ["Bronze — lowest premium, highest out-of-pocket", "Silver — best value if you qualify for cost-sharing reductions", "Gold — higher premium, lower out-of-pocket"] },
+        { "h": "Planning the bridge to Medicare", "p": ["If you'll turn 65 soon, timing your move from a Marketplace plan to Medicare matters — enroll on time to avoid gaps and penalties. We map that transition so it's seamless."] }
+      ]
+    }
+  ],
+  "tools": [
+    { "slug": "eligibility", "name": "Medicare Eligibility & IEP Checker", "desc": "Find out when your Initial Enrollment Period opens based on your birth date." },
+    { "slug": "part-b-penalty", "name": "Part B Late-Enrollment Penalty", "desc": "Estimate the lifelong Part B penalty for delaying enrollment without other coverage." },
+    { "slug": "part-d-penalty", "name": "Part D Late-Enrollment Penalty", "desc": "Estimate the Part D penalty added to your drug premium for going without coverage." },
+    { "slug": "irmaa", "name": "IRMAA Bracket Lookup", "desc": "See which income-related premium bracket you fall into for Parts B and D (2025)." },
+    { "slug": "cost-estimator", "name": "Medicare Cost Estimator", "desc": "Ballpark your yearly Medicare costs across premiums, deductibles, and the Part D cap." },
+    { "slug": "ma-vs-medigap", "name": "MA-vs-Medigap Decision Quiz", "desc": "Answer 5 quick questions to see which path likely fits you best." }
+  ],
+  "faq": [
+    { "q": "How much does it cost to work with you?", "a": "Nothing. Like most independent Medicare advisors, we're compensated by the insurance carriers when you enroll — so comparing plans and getting our help costs you the same as going direct, which is $0. We do not offer every plan available in your area." },
+    { "q": "Do you offer every Medicare plan?", "a": "No. We do not offer every plan available in your area. Currently we represent 76 organizations which offer 2,345 plans nationwide. For all of your options, contact Medicare.gov, 1-800-MEDICARE, or your State Health Insurance Program (SHIP)." },
+    { "q": "Are you part of Medicare or the government?", "a": "No. Christian Brindle Insurance Services is not connected with or endorsed by the U.S. government or the federal Medicare program. We're an independent, licensed insurance agency that helps you compare private plans." },
+    { "q": "When should I start looking at Medicare?", "a": "About 3 months before you turn 65 — that's when your Initial Enrollment Period opens. If you're already on Medicare, the fall Annual Enrollment Period (Oct 15 – Dec 7) is the time to review your plan for the coming year." },
+    { "q": "I already have a plan. Can you review it?", "a": "Absolutely. Plans change their premiums, drug lists, and networks every year. We do a free annual review to make sure your current plan still fits your doctors, medications, and budget — and only suggest a change if it genuinely helps you." }
+  ]
+}
