@@ -10,7 +10,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const DIST = path.join(ROOT, 'dist');
+const DIST = path.resolve(__dirname, '..', '..'); // publish to the repo root
 const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'content', 'agency.json'), 'utf8'));
 const A = data.agency, B = data.brand, C = data.compliance;
 const YEAR = new Date('2026-07-11').getFullYear(); // build stamp (fixed for reproducibility)
@@ -21,14 +21,16 @@ const email = isPh(A.email) ? '' : A.email;
 
 /* ---------- shared chrome ---------- */
 function brandTokens() {
-  return `:root{--ink:${B.ink};--primary:${B.primary};--primary-deep:${B.primaryDeep};--accent:${B.accent};--bg:${B.bg};--surface:${B.surface};--soft:${B.soft};--line:${B.line};--muted:${B.muted};--font-head:${B.fontHead};--font-body:${B.fontBody};}`;
+  return `:root{--ink:${B.ink};--primary:${B.primary};--primary-deep:${B.primaryDeep};--accent:${B.accent};--teal:${B.teal || '#27a6bd'};--bg:${B.bg};--surface:${B.surface};--soft:${B.soft};--line:${B.line};--muted:${B.muted};${B.fontDisplay ? `--font-display:${B.fontDisplay};` : ''}--font-head:${B.fontHead};--font-body:${B.fontBody};}`;
 }
+
+// Iceberg logo mark — evokes the Everything Senior Insurance logo (drop in the real SVG/PNG when available)
+const ICEBERG = '<svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 3l5.5 9h-11L16 3z" fill="#fff"/><path d="M16 3l5.5 9H16V3z" fill="#dff3f7"/><path d="M3 13h26l-4.5 7.5L16 29l-8.5-8.5L3 13z" fill="#eaf6f9"/><path d="M16 12l9 1.5-4 7-5 8.5V12z" fill="#cfe9f0"/></svg>';
 
 function nav(active) {
   const items = [['Home', '/'], ['Services', '/services/'], ['Learn', '/learn/'], ['Tools', '/tools/'], ['About', '/about/'], ['Contact', '/contact/']];
-  const initials = A.advisor.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
   return `<header class="nav"><div class="wrap nav-inner">
-  <a class="brand" href="/"><span class="logo" aria-hidden="true">${initials}</span><b>${esc(A.shortName)}<span>${esc(A.city)}</span></b></a>
+  <a class="brand" href="/"><span class="logo" aria-hidden="true">${ICEBERG}</span><b>${esc(A.shortName)}<span>Medicare · ACA · Senior — Utah</span></b></a>
   <nav class="nav-links" aria-label="Primary">${items.map(([l, h]) => `<a href="${h}"${h === active ? ' aria-current="page"' : ''}>${l}</a>`).join('')}</nav>
   <div class="nav-cta">${phone ? `<a class="btn btn-ghost" href="tel:${esc(phone.replace(/[^0-9+]/g, ''))}">${esc(phone)}</a>` : ''}<a class="btn btn-primary" href="/contact/">${esc(A.cta)}</a>
   <button class="nav-toggle" aria-label="Menu">☰</button></div>
@@ -41,7 +43,8 @@ function footer() {
   return `<footer class="site"><div class="wrap">
   <div class="foot-grid">
     <div>
-      <div class="brand" style="color:#fff;margin-bottom:12px"><span class="logo">${A.advisor.split(' ').map(w=>w[0]).join('').slice(0,2)}</span><b style="color:#fff">${esc(A.shortName)}<span style="color:rgba(255,255,255,.6)">${esc(A.city)}</span></b></div>
+      <div class="brand" style="color:#fff;margin-bottom:12px"><span class="logo">${ICEBERG}</span><b style="color:#fff">${esc(A.shortName)}<span style="color:rgba(255,255,255,.6)">${esc(A.city)}</span></b></div>
+      ${A.formerly ? `<p style="font-size:.82rem;font-style:italic;color:rgba(255,255,255,.6);margin-bottom:8px">${esc(A.formerly)}</p>` : ''}
       <p style="font-size:.92rem;max-width:34ch">${esc(A.tagline)}.</p>
       ${phone ? `<p style="font-size:.92rem"><a href="tel:${esc(phone.replace(/[^0-9+]/g,''))}">${esc(phone)}</a></p>` : ''}
       ${email ? `<p style="font-size:.92rem"><a href="mailto:${esc(email)}">${esc(email)}</a></p>` : ''}
@@ -51,7 +54,7 @@ function footer() {
     <div><h5>Company</h5><ul><li><a href="/about/">About Christian</a></li><li><a href="/tools/">Free tools</a></li><li><a href="/contact/">Contact</a></li><li><a href="https://www.medicare.gov" rel="nofollow">Medicare.gov</a></li></ul></div>
   </div>
   <div class="disclaimer">
-    <p><strong>${esc(A.name)}</strong> &middot; NPN ${esc(A.npn)} &middot; Serving ${esc(A.serviceArea.join(', '))}. ${A.hours}</p>
+    <p><strong>${esc(A.name)}</strong>${A.formerly ? ` (${esc(A.formerly)})` : ''} &middot; ${esc(A.address)} &middot; NPN ${esc(A.npn)} &middot; ${esc(A.hours)}${A.reviews ? ` &middot; ★ ${esc(A.reviews.rating)} (${esc(A.reviews.count)} ${esc(A.reviews.source)} reviews)` : ''}</p>
     <p>${esc(C.nonAffiliation)}</p>
     <p>${esc(C.tpmo)}</p>
     ${C.integrity ? `<p>${esc(C.integrity)}</p>` : ''}
@@ -66,7 +69,7 @@ function jsonld(objs) {
 }
 const orgAuthor = { '@type': 'Organization', name: `${A.shortName} Data Desk`, url: 'https://www.medicare.gov' };
 function localBusiness() {
-  return { '@context': 'https://schema.org', '@type': 'InsuranceAgency', name: A.name, description: A.tagline, areaServed: A.serviceArea, address: { '@type': 'PostalAddress', addressLocality: 'Salt Lake City', addressRegion: 'UT', addressCountry: 'US' }, ...(phone ? { telephone: phone } : {}), ...(email ? { email } : {}), employee: { '@type': 'Person', name: A.advisor, jobTitle: A.advisorTitle } };
+  return { '@context': 'https://schema.org', '@type': 'InsuranceAgency', name: A.name, alternateName: A.formerly ? 'Christian Brindle Insurance Services' : undefined, description: A.tagline, areaServed: A.serviceArea, address: { '@type': 'PostalAddress', streetAddress: A.street || undefined, addressLocality: A.locality || 'Sandy', addressRegion: A.region || 'UT', postalCode: A.postal || undefined, addressCountry: 'US' }, ...(phone ? { telephone: phone } : {}), ...(email ? { email } : {}), ...(A.reviews ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: A.reviews.rating, reviewCount: A.reviews.count, bestRating: '5' } } : {}), employee: { '@type': 'Person', name: A.advisor, jobTitle: A.advisorTitle } };
 }
 function faqSchema(items) {
   return { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: items.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) };
@@ -81,7 +84,7 @@ function page({ title, desc, active, schema = [], body, extraJs = '' }) {
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/designs/gridline.css">
 <style>${brandTokens()}</style>
 ${jsonld(schema)}
@@ -100,13 +103,14 @@ function crumbs(trail) {
 
 /* ---------- HOME ---------- */
 function home() {
-  const badges = ['Independent agency', 'Salt Lake City, Utah', 'No cost to compare', 'Medicare · ACA · Senior'].map(b => `<span>${esc(b)}</span>`).join('');
+  const badges = [(A.reviews ? `★ ${A.reviews.rating} on ${A.reviews.source} (${A.reviews.count} reviews)` : 'Independent agency'), 'Sandy · Salt Lake City, UT', 'No cost to compare', 'Medicare · ACA · Senior'].map(b => `<span>${esc(b)}</span>`).join('');
   const hero = `<section class="hero">
   <canvas class="borealis" data-borealis aria-hidden="true"></canvas><div class="hero-grad"></div>
   <div class="wrap hero-inner">
     <div>
       <span class="eyebrow">${esc(A.city)} · Independent</span>
-      <h1>Medicare made clear — with a local advisor who works for you</h1>
+      <h1>Everything Senior Insurance — Medicare made clear</h1>
+      ${A.formerly ? `<p style="font-style:italic;color:rgba(255,255,255,.7);margin:-4px 0 10px;font-size:.95rem">${esc(A.formerly)}</p>` : ''}
       <p class="lead">${esc(A.tagline)}. Compare Medicare Advantage, Medigap, Part D and ACA plans against your own doctors and prescriptions — with no pressure and no cost to you.</p>
       <div class="hero-badges">${badges}</div>
     </div>
@@ -317,7 +321,9 @@ function contactPage() {
       <p class="disclaimer" style="border:0;color:var(--muted);font-size:.75rem;padding:0;margin-top:10px">Form is not yet wired to a CRM. Add your GHL form/webhook to go live.</p>
     </div>
     <div>
-      <div class="card" style="margin-bottom:22px"><h3>Reach ${esc(A.advisor.split(' ')[0])} directly</h3>
+      <div class="card" style="margin-bottom:22px"><h3>Reach us directly</h3>
+        ${A.reviews ? `<p style="margin:0 0 10px;font-weight:600;color:var(--accent)">★ ${esc(A.reviews.rating)} on ${esc(A.reviews.source)} · ${esc(A.reviews.count)} reviews</p>` : ''}
+        <p style="margin:6px 0"><b>Address:</b> ${esc(A.address)}</p>
         <p style="margin:6px 0"><b>Phone:</b> ${phone ? `<a href="tel:${esc(phone.replace(/[^0-9+]/g,''))}">${esc(phone)}</a>` : '<span style="color:#c0392b">[add phone]</span>'}</p>
         <p style="margin:6px 0"><b>Email:</b> ${email ? `<a href="mailto:${esc(email)}">${esc(email)}</a>` : '<span style="color:#c0392b">[add email]</span>'}</p>
         <p style="margin:6px 0"><b>Serving:</b> ${esc(A.serviceArea.join(', '))}</p>
@@ -342,7 +348,11 @@ function copyDir(src, dstRel) {
   for (const f of fs.readdirSync(src)) fs.copyFileSync(path.join(src, f), path.join(dst, f));
 }
 
-fs.rmSync(DIST, { recursive: true, force: true });
+// Publish into the repo root — clean ONLY generated targets (never site/ or .git).
+const GEN_DIRS = ['services', 'learn', 'tools', 'about', 'contact', 'designs', 'experiences', 'assets'];
+const GEN_FILES = ['index.html', 'llms.txt', 'robots.txt', 'sitemap.xml'];
+GEN_DIRS.forEach(d => fs.rmSync(path.join(DIST, d), { recursive: true, force: true }));
+GEN_FILES.forEach(f => fs.rmSync(path.join(DIST, f), { force: true }));
 fs.mkdirSync(DIST, { recursive: true });
 
 const written = [];

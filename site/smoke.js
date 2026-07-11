@@ -1,6 +1,6 @@
 const http = require('http'), fs = require('fs'), path = require('path');
 const { chromium } = require('playwright');
-const DIST = path.join(__dirname, 'dist');
+const DIST = path.join(__dirname, '..');
 const MIME = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript' };
 const server = http.createServer((req, res) => {
   let p = decodeURIComponent(req.url.split('?')[0]); let fp = path.join(DIST, p);
