@@ -2,7 +2,7 @@
   "meta": {
     "formula": "borealis × gridline × medicare-advantage",
     "buildVersion": "v1",
-    "dataYear": "2025",
+    "dataYear": "2026",
     "reference": "https://eseniorinsurance.com",
     "generatedNote": "Figures are year-stamped and estimate-framed. Live plan counts wire to plan_quoter.medicare_plans (THE BRAIN) when approved."
   },
@@ -64,14 +64,14 @@
     ]
   },
   "marketData": {
-    "note": "Year-stamped, .gov / KFF sourced. Estimate-framed. Salt Lake County live counts populate from THE BRAIN quote funnel.",
+    "note": "CY2026, Salt Lake County. Medicare Advantage / Part D counts pulled live from the CMS Medicare Plan Landscape CY2026 via the Ambrose Brain (healthcare_ma_pd_landscape), 2026-07-11. Cost constants are the 2026 CMS figures.",
     "stats": [
-      { "value": "43", "label": "Medicare Advantage plans available on average to a Utah beneficiary (2025)", "source": "KFF Medicare Advantage 2025", "url": "https://www.kff.org/medicare/" },
-      { "value": "$185.00", "label": "Standard Part B monthly premium (2025)", "source": "CMS.gov", "url": "https://www.cms.gov/newsroom/fact-sheets/2025-medicare-parts-b-premiums-and-deductibles" },
-      { "value": "$257", "label": "Annual Part B deductible (2025)", "source": "CMS.gov", "url": "https://www.cms.gov/newsroom/fact-sheets/2025-medicare-parts-b-premiums-and-deductibles" },
-      { "value": "$1,676", "label": "Part A hospital deductible per benefit period (2025)", "source": "CMS.gov", "url": "https://www.cms.gov/newsroom/fact-sheets/2025-medicare-parts-a-premiums-and-deductibles" },
-      { "value": "$2,000", "label": "New Part D annual out-of-pocket cap (2025, Inflation Reduction Act)", "source": "Medicare.gov", "url": "https://www.medicare.gov/" },
-      { "value": "$36.78", "label": "National base beneficiary premium used for Part D late penalty (2025)", "source": "CMS.gov", "url": "https://www.cms.gov/" }
+      { "value": "41", "label": "Medicare Advantage plans in Salt Lake County (CY2026)", "source": "CMS Medicare Plan Landscape CY2026 · Ambrose Brain", "url": "https://www.cms.gov/medicare/health-drug-plans" },
+      { "value": "17", "label": "of 24 Salt Lake County MA-PD plans at $0 premium (CY2026)", "source": "CMS Medicare Plan Landscape CY2026 · Ambrose Brain", "url": "https://www.cms.gov/medicare/health-drug-plans" },
+      { "value": "4.5", "label": "Top Medicare Advantage star rating in Salt Lake County (CY2026)", "source": "CMS Star Ratings CY2026 · Ambrose Brain", "url": "https://www.medicare.gov/" },
+      { "value": "$2,100", "label": "Part D annual out-of-pocket cap (2026, Inflation Reduction Act)", "source": "CMS CY2026 Landscape", "url": "https://www.medicare.gov/" },
+      { "value": "$202.90", "label": "Standard Part B monthly premium (2026)", "source": "CMS.gov", "url": "https://www.cms.gov/" },
+      { "value": "$1,736", "label": "Part A hospital deductible per benefit period (2026)", "source": "CMS.gov", "url": "https://www.cms.gov/" }
     ]
   },
   "productLines": [
@@ -82,7 +82,7 @@
       "who": "Great for people who want one card, predictable copays, and built-in extras — and who are comfortable using a plan's provider network.",
       "bullets": [
         "Combines Part A, Part B, and usually Part D in one plan",
-        "Many $0-premium options in Salt Lake County (you still pay your Part B premium)",
+        "17 of 24 Medicare Advantage plans in Salt Lake County are $0-premium for CY2026 (you still pay your Part B premium)",
         "Extras Original Medicare doesn't cover: dental, vision, hearing, fitness, OTC allowance",
         "Yearly out-of-pocket maximum protects you from runaway costs",
         "Uses HMO or PPO networks — we check that your doctors are in-network"
@@ -114,18 +114,18 @@
     {
       "slug": "part-d-prescription",
       "name": "Part D Prescription Drug Plans",
-      "short": "Stand-alone drug coverage that keeps your prescriptions affordable — now with a $2,000 yearly out-of-pocket cap.",
+      "short": "Stand-alone drug coverage that keeps your prescriptions affordable — now with a $2,100 yearly out-of-pocket cap.",
       "who": "Anyone on Original Medicare or a Medigap plan who takes prescriptions, or who wants to avoid the lifelong late-enrollment penalty.",
       "bullets": [
         "Covers prescription drugs Original Medicare doesn't",
-        "New $2,000 annual out-of-pocket cap (2025) thanks to the Inflation Reduction Act",
+        "New $2,100 annual out-of-pocket cap (2026) thanks to the Inflation Reduction Act",
         "We match your exact drug list to the lowest-cost plan formulary",
         "Avoids the Part D late-enrollment penalty that lasts as long as you have Part D",
         "Optional Medicare Prescription Payment Plan spreads costs over the year"
       ],
       "long": [
         "Part D plans are run by private insurers and each has its own formulary — the list of drugs it covers and the tier (and price) of each. Two people on the same medications can pay wildly different amounts depending on which plan they pick, which is why we compare plans against your specific prescriptions rather than guessing.",
-        "As of 2025, once your out-of-pocket drug spending hits $2,000 for the year, you pay $0 for covered drugs the rest of the year. That cap is a major change, and we make sure your plan and pharmacy choices take full advantage of it.",
+        "As of 2026, once your out-of-pocket drug spending hits $2,100 for the year, you pay $0 for covered drugs the rest of the year. That cap is a major change, and we make sure your plan and pharmacy choices take full advantage of it.",
         "If you go without creditable drug coverage after your Initial Enrollment Period, Medicare adds a permanent late-enrollment penalty to your premium — so enrolling on time, even in a low-cost plan, protects you long-term."
       ]
     },
@@ -156,8 +156,8 @@
       "read": "7 min",
       "excerpt": "The four parts of Medicare in one clear map: what each covers, what it costs, and how they fit together so you can choose with confidence.",
       "body": [
-        { "h": "The four parts at a glance", "p": ["Medicare is built from four parts. Part A covers hospital stays. Part B covers doctor visits and outpatient care. Together, A and B are called Original Medicare. Part C (Medicare Advantage) is a private all-in-one alternative that bundles A, B, and usually D. Part D covers prescription drugs.", "You'll generally choose one of two paths: Original Medicare (A + B) usually paired with a Part D drug plan and often a Medigap supplement — or a Medicare Advantage plan (Part C) that rolls it together."], "list": ["Part A — hospital insurance (most people pay $0 premium)", "Part B — medical insurance ($185.00/mo standard, 2025)", "Part C — Medicare Advantage, a private bundle", "Part D — prescription drug coverage"] },
-        { "h": "What Part A and Part B cost in 2025", "p": ["Most people get premium-free Part A because they paid Medicare taxes while working. Part A still has a hospital deductible of $1,676 per benefit period in 2025. Part B has a standard premium of $185.00 per month and a $257 annual deductible in 2025; higher earners pay more through IRMAA.", "These numbers change every year, so always confirm the current figures at Medicare.gov before you enroll."] },
+        { "h": "The four parts at a glance", "p": ["Medicare is built from four parts. Part A covers hospital stays. Part B covers doctor visits and outpatient care. Together, A and B are called Original Medicare. Part C (Medicare Advantage) is a private all-in-one alternative that bundles A, B, and usually D. Part D covers prescription drugs.", "You'll generally choose one of two paths: Original Medicare (A + B) usually paired with a Part D drug plan and often a Medigap supplement — or a Medicare Advantage plan (Part C) that rolls it together."], "list": ["Part A — hospital insurance (most people pay $0 premium)", "Part B — medical insurance ($202.90/mo standard, 2026)", "Part C — Medicare Advantage, a private bundle", "Part D — prescription drug coverage"] },
+        { "h": "What Part A and Part B cost in 2026", "p": ["Most people get premium-free Part A because they paid Medicare taxes while working. Part A still has a hospital deductible of $1,736 per benefit period in 2026. Part B has a standard premium of $202.90 per month and a $283 annual deductible in 2026; higher earners pay more through IRMAA.", "These numbers change every year, so always confirm the current figures at Medicare.gov before you enroll."] },
         { "h": "Which path is right for you?", "p": ["There's no universally 'best' choice — it depends on your doctors, your prescriptions, your budget, and how you like to get care. Medigap offers freedom and predictability at a higher premium; Medicare Advantage offers low premiums and extras in exchange for using a network. A licensed advisor can map your specifics to the right path in about 20 minutes."] }
       ]
     },
@@ -189,12 +189,12 @@
     },
     {
       "slug": "part-d-2000-cap",
-      "title": "The new $2,000 Part D drug cap: what it means for you",
+      "title": "The new $2,100 Part D drug cap: what it means for you",
       "category": "Costs",
       "read": "5 min",
-      "excerpt": "Starting in 2025, your out-of-pocket prescription costs are capped at $2,000 a year. Here's how the cap works and how to use it.",
+      "excerpt": "Starting in 2026, your out-of-pocket prescription costs are capped at $2,100 a year. Here's how the cap works and how to use it.",
       "body": [
-        { "h": "What changed in 2025", "p": ["Thanks to the Inflation Reduction Act, Medicare Part D now caps your annual out-of-pocket drug spending at $2,000. Once you hit that limit, you pay $0 for covered drugs for the rest of the year. The old 'donut hole' coverage gap is gone."] },
+        { "h": "What changed in 2026", "p": ["Thanks to the Inflation Reduction Act, Medicare Part D now caps your annual out-of-pocket drug spending at $2,100. Once you hit that limit, you pay $0 for covered drugs for the rest of the year. The old 'donut hole' coverage gap is gone."] },
         { "h": "The Medicare Prescription Payment Plan", "p": ["You can also choose to spread your out-of-pocket drug costs across the year in monthly installments instead of paying a big bill at the pharmacy counter. This is optional and free to opt into — useful if your costs are front-loaded early in the year."] },
         { "h": "How we help", "p": ["We compare your exact medication list against each plan's formulary and preferred pharmacies to find the lowest total cost — not just the lowest premium. The cap protects you, but plan choice still decides how quickly and cheaply you get there."] }
       ]
@@ -206,7 +206,7 @@
       "read": "6 min",
       "excerpt": "Higher-income beneficiaries pay an Income-Related Monthly Adjustment Amount on Parts B and D. Here's how it's calculated and what to do.",
       "body": [
-        { "h": "What IRMAA is", "p": ["IRMAA is a surcharge added to your Part B and Part D premiums if your income is above certain thresholds. Social Security determines it using your Modified Adjusted Gross Income (MAGI) from your tax return two years prior — so your 2025 IRMAA is based on your 2023 income."] },
+        { "h": "What IRMAA is", "p": ["IRMAA is a surcharge added to your Part B and Part D premiums if your income is above certain thresholds. Social Security determines it using your Modified Adjusted Gross Income (MAGI) from your tax return two years prior — so your 2026 IRMAA is based on your 2024 income."] },
         { "h": "The two-year lookback", "p": ["Because of the lookback, a one-time income spike (selling a home, a Roth conversion, capital gains) can raise your Medicare premiums two years later. Planning around that timing can save real money."] },
         { "h": "Life-changing events", "p": ["If your income dropped due to a life-changing event — retirement, loss of a pension, divorce, death of a spouse — you can file Form SSA-44 to ask Social Security to use your more recent income instead. Many people who qualify never file it."] }
       ]
@@ -218,7 +218,7 @@
       "read": "6 min",
       "excerpt": "What Medicare looks like on the Wasatch Front — plan availability, local networks, and how to get unbiased help nearby.",
       "body": [
-        { "h": "A strong plan market on the Wasatch Front", "p": ["Utah beneficiaries have access to a robust Medicare Advantage market — on average dozens of plans (about 43 in 2025, per KFF) — plus the full range of Medigap and Part D options. Salt Lake County in particular offers wide choice, which is great news and also why comparing carefully matters."] },
+        { "h": "A strong plan market on the Wasatch Front", "p": ["Salt Lake County beneficiaries have access to a robust Medicare Advantage market — 41 Medicare Advantage plans for CY2026 (24 MA-PD plus 17 Special Needs Plans), 17 of the 24 MA-PD plans at a $0 premium, according to the CMS Medicare Plan Landscape — plus 10 stand-alone Part D plans in the Idaho/Utah region and the full range of Medigap options. Wide choice is great news, and also why comparing carefully matters."] },
         { "h": "Local networks and hospitals", "p": ["Advantage plan networks in Utah are often built around major systems like Intermountain Health and University of Utah Health. Which plan is right depends on where you already get care — we verify your specific doctors and facilities are in-network before you enroll."] },
         { "h": "Getting unbiased local help", "p": ["As an independent, Salt Lake City–based advisor, Christian Brindle works with many carriers rather than one — so the recommendation is based on your needs, not a single company's lineup. Comparing your options costs you nothing."] }
       ]
@@ -241,7 +241,7 @@
     { "slug": "eligibility", "name": "Medicare Eligibility & IEP Checker", "desc": "Find out when your Initial Enrollment Period opens based on your birth date." },
     { "slug": "part-b-penalty", "name": "Part B Late-Enrollment Penalty", "desc": "Estimate the lifelong Part B penalty for delaying enrollment without other coverage." },
     { "slug": "part-d-penalty", "name": "Part D Late-Enrollment Penalty", "desc": "Estimate the Part D penalty added to your drug premium for going without coverage." },
-    { "slug": "irmaa", "name": "IRMAA Bracket Lookup", "desc": "See which income-related premium bracket you fall into for Parts B and D (2025)." },
+    { "slug": "irmaa", "name": "IRMAA Bracket Lookup", "desc": "See which income-related premium bracket you fall into for Parts B and D (2026)." },
     { "slug": "cost-estimator", "name": "Medicare Cost Estimator", "desc": "Ballpark your yearly Medicare costs across premiums, deductibles, and the Part D cap." },
     { "slug": "ma-vs-medigap", "name": "MA-vs-Medigap Decision Quiz", "desc": "Answer 5 quick questions to see which path likely fits you best." }
   ],

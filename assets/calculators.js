@@ -1,6 +1,6 @@
 /* ============================================================
    calculators.js — Free Medicare tools (v1 formula/table engines,
-   year-stamped 2025, estimate-framed). Educational only.
+   year-stamped 2026, estimate-framed). Educational only.
    Widgets: eligibility/IEP · Part B penalty · Part D penalty ·
             IRMAA lookup · cost estimator · MA-vs-Medigap quiz
    ============================================================ */
@@ -8,12 +8,14 @@
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var money = function (n) { return '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
 
-  // 2025 constants (CMS / SSA) — update yearly
-  var PART_B_STD = 185.00;         // 2025 standard Part B premium
-  var PART_D_NBBP = 36.78;         // 2025 national base beneficiary premium
-  var PART_B_DEDUCT = 257;         // 2025
-  var PART_A_DEDUCT = 1676;        // 2025 per benefit period
-  var PART_D_CAP = 2000;           // 2025 OOP cap
+  // 2026 constants (CMS / SSA) — Part D cap & deductible verified via Ambrose Brain
+  // (CMS Medicare Plan Landscape CY2026). Update yearly.
+  var PART_B_STD = 202.90;         // 2026 standard Part B premium
+  var PART_D_NBBP = 38.99;         // 2026 national base beneficiary premium
+  var PART_B_DEDUCT = 283;         // 2026
+  var PART_A_DEDUCT = 1736;        // 2026 per benefit period
+  var PART_D_CAP = 2100;           // 2026 OOP cap (verified: CMS CY2026 Landscape)
+  var PART_D_DEDUCT = 615;         // 2026 standard Part D deductible (verified)
 
   // ---------- Eligibility / IEP ----------
   var elig = $('#tool-eligibility');
@@ -43,7 +45,7 @@
       var add = PART_B_STD * (pct / 100);
       out.innerHTML = periods === 0
         ? 'No Part B late penalty for under 12 months uncovered. Note: the penalty counts full 12-month periods you were eligible but not enrolled without other creditable coverage.'
-        : 'Estimated Part B penalty: <b>+' + pct + '%</b> ≈ <b>' + money(add) + '/mo</b> added to your premium — <b>for life</b> (based on the ' + money(PART_B_STD) + ' standard premium, 2025). That\'s about ' + money(add * 12) + '/year.';
+        : 'Estimated Part B penalty: <b>+' + pct + '%</b> ≈ <b>' + money(add) + '/mo</b> added to your premium — <b>for life</b> (based on the ' + money(PART_B_STD) + ' standard premium, 2026). That\'s about ' + money(add * 12) + '/year.';
     };
     pb.querySelectorAll('input').forEach(function (e) { e.addEventListener('input', runB); });
   }
@@ -57,22 +59,22 @@
       var pen = Math.round(0.01 * PART_D_NBBP * months * 100) / 100;
       out.innerHTML = months === 0
         ? 'No Part D penalty. The penalty applies if you go 63+ days without creditable drug coverage after your Initial Enrollment Period.'
-        : 'Estimated Part D penalty: <b>1% × ' + money(PART_D_NBBP) + ' × ' + months + ' months</b> ≈ <b>' + money(pen) + '/mo</b>, rounded to the nearest 10¢ and added to your drug premium <b>as long as you have Part D</b> (2025 national base premium).';
+        : 'Estimated Part D penalty: <b>1% × ' + money(PART_D_NBBP) + ' × ' + months + ' months</b> ≈ <b>' + money(pen) + '/mo</b>, rounded to the nearest 10¢ and added to your drug premium <b>as long as you have Part D</b> (2026 national base premium).';
     };
     pd.querySelectorAll('input').forEach(function (e) { e.addEventListener('input', runD); });
   }
 
-  // ---------- IRMAA bracket lookup (2025) ----------
+  // ---------- IRMAA bracket lookup (2026) ----------
   var irmaa = $('#tool-irmaa');
   if (irmaa) {
-    // 2025 IRMAA (based on 2023 MAGI). [singleMax, marriedMax, partB total, partD add-on]
+    // 2026 IRMAA (based on 2024 MAGI). [singleMax, marriedMax, partB total, partD add-on]
     var B = [
-      [106000, 212000, 185.00, 0.00],
-      [133000, 266000, 259.00, 13.70],
-      [167000, 334000, 370.00, 35.30],
-      [200000, 400000, 480.90, 57.00],
-      [500000, 750000, 591.90, 78.60],
-      [Infinity, Infinity, 628.90, 85.80]
+      [109000, 218000, 202.90, 0.00],
+      [137000, 274000, 284.10, 14.50],
+      [171000, 342000, 405.90, 37.50],
+      [214000, 428000, 527.50, 60.40],
+      [500000, 750000, 649.30, 83.30],
+      [Infinity, Infinity, 690.90, 91.40]
     ];
     var runI = function () {
       var magi = parseFloat($('#irmaa-magi', irmaa).value.replace(/[^0-9.]/g, '')) || 0;
@@ -81,7 +83,7 @@
       var row = B[0], tier = 1;
       for (var i = 0; i < B.length; i++) { var cap = married ? B[i][1] : B[i][0]; if (magi <= cap) { row = B[i]; tier = i + 1; break; } }
       var extra = tier === 1 ? 'the standard premium — no IRMAA surcharge' : 'an IRMAA surcharge';
-      out.innerHTML = 'Based on a MAGI of <b>' + money(magi) + '</b> (' + (married ? 'married filing jointly' : 'single') + ') you\'d fall in <b>tier ' + tier + '</b>, paying <b>' + extra + '</b>: about <b>' + money(row[2]) + '/mo</b> for Part B' + (row[3] > 0 ? ' plus <b>+' + money(row[3]) + '/mo</b> on Part D' : '') + ' (2025, from 2023 income). Had a big income drop? File SSA-44.';
+      out.innerHTML = 'Based on a MAGI of <b>' + money(magi) + '</b> (' + (married ? 'married filing jointly' : 'single') + ') you\'d fall in <b>tier ' + tier + '</b>, paying <b>' + extra + '</b>: about <b>' + money(row[2]) + '/mo</b> for Part B' + (row[3] > 0 ? ' plus <b>+' + money(row[3]) + '/mo</b> on Part D' : '') + ' (2026, from 2024 income). Had a big income drop? File SSA-44.';
     };
     irmaa.querySelectorAll('input,select').forEach(function (e) { e.addEventListener('input', runI); });
   }
@@ -105,7 +107,7 @@
         est = partB + PART_B_DEDUCT + Math.min(rx, PART_D_CAP) + 1000;
         note = 'Original Medicare alone leaves you exposed with no out-of-pocket max — most people add Medigap or choose Advantage.';
       }
-      out.innerHTML = 'Rough yearly estimate: <b>' + money(est) + '/year</b> (~' + money(est / 12) + '/mo). ' + note + ' Part D out-of-pocket is capped at <b>' + money(PART_D_CAP) + '</b> in 2025. Estimate only — your real cost depends on your plan, doctors, and drugs.';
+      out.innerHTML = 'Rough yearly estimate: <b>' + money(est) + '/year</b> (~' + money(est / 12) + '/mo). ' + note + ' Part D out-of-pocket is capped at <b>' + money(PART_D_CAP) + '</b> in 2026. Estimate only — your real cost depends on your plan, doctors, and drugs.';
     };
     ce.querySelectorAll('input,select').forEach(function (e) { e.addEventListener('input', runC); });
   }

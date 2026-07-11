@@ -180,9 +180,9 @@ function home() {
   const how = `<section class="section"><div class="wrap">
     <div class="center reveal"><span class="eyebrow">How it works</span><h2>Three simple steps</h2></div>
     <div class="steps" style="margin-top:48px">
-      <div class="step-item reveal"><h3>1 · Tell us your situation</h3><p style="color:var(--muted)">Your ZIP, your doctors, your prescriptions. Five minutes on the phone or online.</p></div>
-      <div class="step-item reveal"><h3>2 · We compare your options</h3><p style="color:var(--muted)">We check every plan we offer against your exact doctors and drugs — networks, formularies, and costs.</p></div>
-      <div class="step-item reveal"><h3>3 · You choose with confidence</h3><p style="color:var(--muted)">We enroll you, then review it every fall so your plan still fits. No cost to you, ever.</p></div>
+      <div class="step-item reveal"><h3>Tell us your situation</h3><p style="color:var(--muted)">Your ZIP, your doctors, your prescriptions. Five minutes on the phone or online.</p></div>
+      <div class="step-item reveal"><h3>We compare your options</h3><p style="color:var(--muted)">We check every plan we offer against your exact doctors and drugs — networks, formularies, and costs.</p></div>
+      <div class="step-item reveal"><h3>You choose with confidence</h3><p style="color:var(--muted)">We enroll you, then review it every fall so your plan still fits. No cost to you, ever.</p></div>
     </div></div></section>`;
 
   const video = `<section class="section tight"><div class="wrap"><div class="bio">

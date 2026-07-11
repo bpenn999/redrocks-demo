@@ -89,29 +89,29 @@
   if (ageGo) ageGo.addEventListener('click', submitAge);
   if (ageInput) ageInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') submitAge(); });
 
-  // Estimate (client-side placeholder — swap for live Brain plan counts)
+  // CY2026 figures verified via Ambrose Brain (CMS Medicare Plan Landscape, Salt Lake County).
+  // For a different ZIP/county, wire this to plan_quoter.medicare_plans for live counts.
   function estimate() {
     var age = parseInt(state.age, 10) || 65;
     var medicare = age >= 64;
-    // county plan-count estimate (Salt Lake County area). Live value comes from plan_quoter.medicare_plans.
-    var maPlans = 43, medigap = 10, partD = 21, acaPlans = 60;
+    var maPlans = 41, maPd = 24, zeroPrem = 17, medigap = 10, partD = 10;
     var line1, line2, big, sub;
     if (!medicare) {
-      big = acaPlans + '+'; sub = 'ACA Marketplace plans near ' + state.zip;
-      line1 = { b: 'Under 65', s: 'ACA / Marketplace path' };
-      line2 = { b: 'Subsidies', s: 'Most qualify for tax credits' };
+      big = 'ACA'; sub = 'Marketplace plans near ' + state.zip + ' (under 65)';
+      line1 = { b: 'Subsidies', s: 'Most qualify for tax credits' };
+      line2 = { b: 'Bronze–Gold', s: 'Metal tiers to fit your budget' };
     } else if (state.path === 'medigap') {
-      big = medigap + '+'; sub = 'Medigap plan options near ' + state.zip;
-      line1 = { b: partD + '+', s: 'Part D drug plans' };
+      big = medigap; sub = 'standardized Medigap plans available';
+      line1 = { b: partD, s: 'Part D drug plans (ID/UT)' };
       line2 = { b: 'Any doctor', s: 'Nationwide, no network' };
     } else if (state.path === 'original') {
-      big = partD + '+'; sub = 'Part D drug plans near ' + state.zip;
-      line1 = { b: medigap + '+', s: 'Medigap options' };
-      line2 = { b: '$2,000', s: 'Part D yearly cap (2025)' };
+      big = partD; sub = 'stand-alone Part D plans (ID/UT region)';
+      line1 = { b: medigap, s: 'Medigap options' };
+      line2 = { b: '$2,100', s: 'Part D yearly cap (2026)' };
     } else {
-      big = maPlans + '+'; sub = 'Medicare Advantage plans near ' + state.zip;
-      line1 = { b: partD + '+', s: 'Part D drug plans' };
-      line2 = { b: '$0', s: 'Many $0-premium options' };
+      big = maPlans; sub = 'Medicare Advantage plans in Salt Lake County';
+      line1 = { b: zeroPrem + ' of ' + maPd, s: 'MA-PD plans at $0 premium' };
+      line2 = { b: '4.5★', s: 'Top plan rating (CY2026)' };
     }
     return { big: big, sub: sub, line1: line1, line2: line2 };
   }
@@ -127,7 +127,7 @@
         '<div><b>' + r.line1.b + '</b><small>' + r.line1.s + '</small></div>' +
         '<div><b>' + r.line2.b + '</b><small>' + r.line2.s + '</small></div>' +
       '</div>' +
-      '<p class="hint" style="text-align:center">Estimated availability — year-stamped 2025. Actual plans depend on your county, doctors, and medications. We do not offer every plan available in your area.</p>';
+      '<p class="hint" style="text-align:center">Salt Lake County availability — CY2026, from the CMS Medicare Plan Landscape. Actual plans depend on your county, doctors, and medications. We do not offer every plan available in your area.</p>';
   }
 
   show(0);
