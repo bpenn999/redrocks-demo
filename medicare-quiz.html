@@ -323,12 +323,12 @@
     <div class="wrap topbar-inner">
       <div class="brand">
         <span class="mark">M</span>
-        <div>Medicare Match<small>Independent · Licensed Help</small></div>
+        <div>Medicare On Main<small>Independent · Licensed Help</small></div>
       </div>
       <nav class="nav">
         <a class="navlink" href="#how" style="color:var(--muted);text-decoration:none;font-weight:600;font-size:.92rem;">How It Works</a>
         <a class="navlink" href="#compare" style="color:var(--muted);text-decoration:none;font-weight:600;font-size:.92rem;">Coverage Types</a>
-        <a class="phone" href="tel:+18005550142"><span class="num">Talk to an agent</span><b>(800)&nbsp;555&ndash;0142</b></a>
+        <a class="phone" href="tel:+14352605156"><span class="num">Talk to an agent</span><b>(435)&nbsp;260&ndash;5156</b></a>
         <a class="btn nav-cta" href="#quiz">Start Quiz</a>
       </nav>
     </div>
@@ -481,7 +481,7 @@
               <div id="resMatches"></div>
               <div class="summary-line" id="resSummary"></div>
               <div class="result-cta">
-                <a class="btn accent" href="tel:+18005550142" style="text-align:center;padding:15px;">📞 Talk to a licensed agent now</a>
+                <a class="btn accent" href="tel:+14352605156" style="text-align:center;padding:15px;">📞 Talk to a licensed agent now</a>
                 <a class="btn ghost" href="#how" style="text-align:center;padding:14px;">See how the review works</a>
               </div>
               <p class="microtrust" style="padding:14px 0 0;">A licensed agent will reach out shortly to walk through your matches. No cost, no obligation.</p>
@@ -566,7 +566,7 @@
 
   <footer>
     <div class="wrap foot-inner">
-      <div class="brand"><span class="mark">M</span><div>Medicare Match<small>Independent · Licensed Help</small></div></div>
+      <div class="brand"><span class="mark">M</span><div>Medicare On Main<small>Independent · Licensed Help</small></div></div>
       <div class="foot-links">
         <a href="#how">How It Works</a>
         <a href="#compare">Coverage</a>
@@ -577,13 +577,58 @@
     <div class="wrap disclaimer">
       <p>We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov or 1&ndash;800&ndash;MEDICARE (1&ndash;800&ndash;633&ndash;4227), 24 hours a day/7 days a week, or consult <a href="https://www.medicare.gov" style="text-decoration:underline;">www.medicare.gov</a> to get information on all of your options.</p>
       <p>Not connected with or endorsed by the United States government or the federal Medicare program. This is a solicitation for insurance. A licensed insurance agent may contact you.</p>
-      <p>&copy; 2026 Medicare Match &middot; Powered by Brian Penner Insurance Services &middot; (800) 555&ndash;0142 &middot; This is a demonstration page.</p>
+      <p>&copy; 2026 Medicare On Main &middot; (435) 260&ndash;5156 &middot; This is a demonstration page.</p>
     </div>
   </footer>
 </div>
 
 <script>
   (function () {
+    /* ============================================================
+       GoHighLevel lead capture
+       Paste your GHL Workflow "Inbound Webhook" trigger URL below.
+       (Workflows → new workflow → trigger: Inbound Webhook → copy URL)
+       When set, every completed quiz POSTs the lead here and GHL's
+       "Create/Update Contact" action maps the fields by name.
+       Leave "" to run the page in demo mode (no lead sent).
+       ============================================================ */
+    var LEAD_WEBHOOK_URL = "";
+
+    function submitLead() {
+      var c = answers.contact || {};
+      var recEl = document.querySelector('#resMatches .match-card.primary h4');
+      var payload = {
+        source: "Medicare On Main — New to Medicare Quiz",
+        full_name: ((c.fn || '') + ' ' + (c.ln || '')).trim(),
+        first_name: c.fn || '',
+        last_name: c.ln || '',
+        email: c.em || '',
+        phone: c.ph || '',
+        postal_code: c.zip || '',
+        tags: "new-to-medicare, quiz-lead, website",
+        consent: "yes",
+        submitted_at: new Date().toISOString(),
+        quiz_situation: answers.who || '',
+        quiz_timing: answers.timing || '',
+        quiz_employer_coverage: answers.working || '',
+        quiz_prescriptions: answers.rx || '',
+        quiz_keep_doctors: answers.doctors || '',
+        quiz_priorities: (answers.priorities || []).join(', '),
+        recommended_path: recEl ? recEl.textContent : ''
+      };
+      if (!LEAD_WEBHOOK_URL) { return; } // demo mode
+      try {
+        // text/plain avoids a CORS preflight; GHL parses the JSON body.
+        fetch(LEAD_WEBHOOK_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          keepalive: true,
+          headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+          body: JSON.stringify(payload)
+        }).catch(function () {});
+      } catch (e) { /* never block the user on a network error */ }
+    }
+
     var steps = Array.prototype.slice.call(document.querySelectorAll('.qstep'));
     var total = steps.length;
     var current = 0;
@@ -737,6 +782,7 @@
                '<div><h4>' + m[2] + '</h4><p>' + m[3] + '</p></div></div>';
       }).join('');
       document.getElementById('resSummary').innerHTML = summaryText();
+      submitLead(); // send the lead to GoHighLevel
       document.getElementById('quizMain').style.display = 'none';
       document.getElementById('quizResult').classList.add('show');
       document.getElementById('quiz').scrollIntoView({ behavior: 'smooth', block: 'start' });
