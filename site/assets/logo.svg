@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" role="img" aria-label="Everything Senior Insurance">
+  <!-- Faceted mountain mark (recreated from the brand logo) -->
+  <g>
+    <!-- back-left low peak -->
+    <polygon points="34,52 66,98 2,98" fill="#79c9e0"/>
+    <polygon points="34,52 48,72 24,80" fill="#a9e0ef"/>
+    <!-- main tall peak -->
+    <polygon points="78,14 132,98 26,98" fill="#2a7fa9"/>
+    <polygon points="78,14 100,48 62,44" fill="#eef9fc"/>
+    <polygon points="78,14 26,98 60,98" fill="#8fd4e8"/>
+    <!-- right mid peak -->
+    <polygon points="118,40 156,98 84,98" fill="#1c5f7d"/>
+    <polygon points="118,40 132,62 106,60" fill="#d6f0f7"/>
+    <!-- base swoosh -->
+    <path d="M2 100 C 50 112, 120 112, 158 96 C 128 116, 40 118, 2 104 Z" fill="#2a9db4"/>
+  </g>
+  <!-- Wordmark -->
+  <g font-family="'Arial Narrow','Helvetica Neue',Arial,sans-serif">
+    <text x="176" y="60" font-weight="700">
+      <tspan fill="#2a9db4" font-size="50">E</tspan><tspan fill="#215062" font-size="31" letter-spacing="1.5">VERYTHING </tspan><tspan fill="#2a9db4" font-size="50">S</tspan><tspan fill="#215062" font-size="31" letter-spacing="1.5">ENIOR</tspan>
+    </text>
+    <text x="176" y="102" font-weight="700">
+      <tspan fill="#2a9db4" font-size="44">I</tspan><tspan fill="#1c3d6e" font-size="27" letter-spacing="7">NSURANCE</tspan>
+    </text>
+  </g>
+</svg>
