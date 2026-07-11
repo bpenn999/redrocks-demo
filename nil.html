@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ava Sorenson — NIL Partnerships</title>
+<meta name="description" content="Ava Sorenson — University of Utah gymnast. NIL partnerships, media kit, and brand collaborations.">
+</head>
+<body>
+<style>
+  :root {
+    --crimson: #C4001A;
+    --crimson-deep: #8E0715;
+    --blush: #E7D5CF;
+    --bg: #F4EFE9;
+    --surface: #FBF8F4;
+    --ink: #17120F;
+    --text: #17120F;
+    --muted: #756A62;
+    --line: rgba(23, 18, 15, 0.13);
+    --panel-a: #C4001A;
+    --panel-b: #2A0A0C;
+
+    --font-disp: Georgia, 'Times New Roman', 'Iowan Old Style', serif;
+    --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+    --maxw: 1140px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --crimson: #ED2138;
+      --crimson-deep: #B10016;
+      --blush: #4A2A28;
+      --bg: #120E0C;
+      --surface: #1C1613;
+      --ink: #F5EEE8;
+      --text: #F5EEE8;
+      --muted: #B3A79E;
+      --line: rgba(255, 255, 255, 0.14);
+      --panel-a: #ED2138;
+      --panel-b: #17110F;
+    }
+  }
+  :root[data-theme="dark"] {
+    --crimson: #ED2138; --crimson-deep: #B10016; --blush: #4A2A28;
+    --bg: #120E0C; --surface: #1C1613; --ink: #F5EEE8; --text: #F5EEE8;
+    --muted: #B3A79E; --line: rgba(255,255,255,0.14); --panel-a: #ED2138; --panel-b: #17110F;
+  }
+  :root[data-theme="light"] {
+    --crimson: #C4001A; --crimson-deep: #8E0715; --blush: #E7D5CF;
+    --bg: #F4EFE9; --surface: #FBF8F4; --ink: #17120F; --text: #17120F;
+    --muted: #756A62; --line: rgba(23,18,15,0.13); --panel-a: #C4001A; --panel-b: #2A0A0C;
+  }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  .page { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 26px; }
+
+  .label { font-family: var(--font-body); text-transform: uppercase; letter-spacing: 0.24em; font-size: 0.74rem; font-weight: 700; color: var(--crimson); }
+  h1, h2, h3, .disp { font-family: var(--font-disp); font-weight: 700; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+
+  /* photo panels (swap for real images) */
+  .photo { position: relative; background: linear-gradient(150deg, var(--panel-a), var(--panel-b)); overflow: hidden; }
+  .photo::after { content: attr(data-tag); position: absolute; bottom: 10px; right: 12px; font-family: var(--font-body); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.62rem; color: rgba(255,255,255,0.55); }
+  .photo .huge { position: absolute; font-family: var(--font-disp); font-weight: 700; color: rgba(255,255,255,0.14); line-height: 0.8; }
+
+  /* topbar */
+  .topbar { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 86%, transparent); backdrop-filter: blur(10px) saturate(140%); border-bottom: 1px solid var(--line); }
+  .tb { display: flex; align-items: center; justify-content: space-between; height: 62px; }
+  .logo { font-family: var(--font-disp); font-size: 1.15rem; font-weight: 700; letter-spacing: 0.02em; }
+  .logo b { color: var(--crimson); }
+  .tnav { display: flex; align-items: center; gap: 24px; }
+  .tnav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+  .tnav a:hover { color: var(--text); }
+  .btn { font-family: var(--font-body); font-weight: 700; letter-spacing: 0.03em; background: var(--crimson); color: #fff; border: none; border-radius: 2px; padding: 12px 22px; cursor: pointer; text-decoration: none; display: inline-block; transition: background .2s, transform .12s; }
+  .btn:hover { background: var(--crimson-deep); transform: translateY(-1px); }
+  .btn.small { padding: 9px 17px; font-size: 0.9rem; }
+  .btn.line { background: transparent; color: var(--text); box-shadow: inset 0 0 0 1.5px var(--line); }
+  .btn.line:hover { box-shadow: inset 0 0 0 1.5px var(--crimson); color: var(--crimson); background: transparent; }
+
+  /* hero */
+  .hero { padding: 40px 0 0; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 40px; align-items: center; }
+  .hero .kicker { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-bottom: 20px; }
+  .chip { font-family: var(--font-body); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.72rem; font-weight: 700; padding: 5px 11px; border: 1px solid var(--line); border-radius: 100px; color: var(--muted); }
+  .hero h1 { font-size: clamp(3.2rem, 10vw, 6.6rem); line-height: 0.9; }
+  .hero h1 span { color: var(--crimson); }
+  .hero .sub { font-family: var(--font-body); text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 700; color: var(--muted); margin-top: 20px; }
+  .hero .lede { max-width: 42ch; color: var(--muted); margin: 18px 0 26px; font-size: 1.08rem; }
+  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero-photo { aspect-ratio: 4/5; border-radius: 6px; }
+  .hero-photo .huge { top: 8%; left: -2%; font-size: 13rem; }
+
+  /* stat strip */
+  .stats { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-top: 42px; }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stat { padding: 26px 20px; border-left: 1px solid var(--line); }
+  .stat:first-child { border-left: none; }
+  .stat .n { font-family: var(--font-disp); font-weight: 700; font-size: 2.5rem; line-height: 1; font-variant-numeric: tabular-nums; }
+  .stat .l { text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.72rem; font-weight: 700; color: var(--muted); margin-top: 8px; }
+
+  section { padding: 82px 0; }
+  .sec-label { display: flex; align-items: center; gap: 14px; margin-bottom: 26px; }
+  .sec-label::after { content: ""; height: 1px; flex: 1; background: var(--line); }
+
+  /* about */
+  .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 46px; align-items: center; }
+  .about-photo { aspect-ratio: 1/1; border-radius: 6px; }
+  .about-photo .huge { bottom: -4%; right: -2%; font-size: 11rem; }
+  .about h2 { font-size: clamp(2rem, 5vw, 3.1rem); line-height: 1.02; }
+  .about p { color: var(--muted); margin: 18px 0 0; }
+  .about .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 26px; }
+  .about .facts div { border-top: 2px solid var(--crimson); padding-top: 10px; }
+  .about .facts .fk { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.68rem; font-weight: 700; color: var(--muted); }
+  .about .facts .fv { font-family: var(--font-disp); font-size: 1.25rem; }
+
+  /* partner packages */
+  .partner { background: var(--surface); }
+  .partner .head { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: end; margin-bottom: 34px; }
+  .partner h2 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1; }
+  .partner .head p { color: var(--muted); margin: 0; }
+  .pkg-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .pkg { border: 1px solid var(--line); border-radius: 6px; padding: 26px; background: var(--bg); display: flex; flex-direction: column; gap: 12px; transition: border-color .16s, transform .16s; }
+  .pkg:hover { border-color: var(--crimson); transform: translateY(-2px); }
+  .pkg .pk-top { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+  .pkg h3 { font-size: 1.5rem; }
+  .pkg .from { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.68rem; font-weight: 700; color: var(--crimson); white-space: nowrap; }
+  .pkg p { color: var(--muted); margin: 0; font-size: 0.98rem; }
+  .pkg ul { margin: 4px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .pkg li { position: relative; padding-left: 20px; font-size: 0.95rem; }
+  .pkg li::before { content: "→"; position: absolute; left: 0; color: var(--crimson); font-weight: 700; }
+
+  /* partners logos */
+  .brands { text-align: center; }
+  .brands .row { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px 46px; margin-top: 26px; }
+  .brands .row span { font-family: var(--font-disp); font-size: 1.35rem; color: var(--muted); opacity: 0.7; }
+
+  /* gallery */
+  .gal-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 150px; gap: 12px; }
+  .gal-grid .photo { border-radius: 5px; }
+  .gal-grid .g1 { grid-column: span 2; grid-row: span 2; }
+  .gal-grid .g4 { grid-row: span 2; }
+
+  /* press */
+  .press { background: var(--ink); color: var(--bg); }
+  :root[data-theme="light"] .press, :root:not([data-theme="dark"]) .press { color: #F5EEE8; }
+  .press .label { color: #ff8a97; }
+  .press h2 { color: #F5EEE8; font-size: clamp(1.8rem, 4.5vw, 2.6rem); max-width: 22ch; margin: 12px 0 30px; }
+  .press-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .press-list div { border-top: 1px solid rgba(255,255,255,0.2); padding-top: 14px; }
+  .press-list .pub { font-family: var(--font-disp); font-size: 1.3rem; color: #F5EEE8; }
+  .press-list .quo { color: rgba(245,238,232,0.72); font-size: 0.95rem; margin-top: 6px; }
+
+  /* contact */
+  .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 46px; align-items: start; }
+  .contact h2 { font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 0.98; }
+  .contact .ci { color: var(--muted); margin-top: 18px; }
+  .contact .direct { margin-top: 24px; display: flex; flex-direction: column; gap: 8px; }
+  .contact .direct b { font-family: var(--font-disp); font-size: 1.15rem; color: var(--text); font-weight: 700; }
+  form.card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 26px; }
+  .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 15px; }
+  .field label { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.72rem; font-weight: 700; color: var(--muted); }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  input, select, textarea { font-family: var(--font-body); font-size: 1rem; color: var(--text); background: var(--bg); border: 1px solid var(--line); border-radius: 2px; padding: 11px 13px; width: 100%; resize: vertical; }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--crimson); outline-offset: 1px; border-color: transparent; }
+  form.card .btn { width: 100%; padding: 15px; margin-top: 4px; }
+  .success { display: none; text-align: center; padding: 16px 6px; }
+  .success h3 { color: var(--crimson); font-size: 1.5rem; }
+  .success p { color: var(--muted); }
+  form.card.done .fields, form.card.done .btn, form.card.done .fnote { display: none; }
+  form.card.done .success { display: block; }
+  .fnote { font-size: 0.82rem; color: var(--muted); text-align: center; margin-top: 12px; }
+
+  footer { border-top: 1px solid var(--line); }
+  .foot { padding: 34px 0; display: flex; flex-wrap: wrap; gap: 16px 30px; align-items: center; justify-content: space-between; }
+  .foot .social { display: flex; gap: 20px; }
+  .foot a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: 0.92rem; }
+  .foot a:hover { color: var(--crimson); }
+
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (max-width: 900px) {
+    .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+    .hero-photo { aspect-ratio: 16/11; }
+    .about-photo { aspect-ratio: 16/10; }
+    .partner .head { grid-template-columns: 1fr; gap: 12px; }
+    .pkg-grid { grid-template-columns: 1fr; }
+    .press-list { grid-template-columns: 1fr; gap: 16px; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .stat:nth-child(3) { border-left: none; }
+    .stat:nth-child(3), .stat:nth-child(4) { border-top: 1px solid var(--line); }
+    .gal-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 130px; }
+  }
+  @media (max-width: 560px) {
+    .tnav a:not(.btn) { display: none; }
+    section { padding: 58px 0; }
+    .about .facts { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .btn, .pkg { transition: none; } }
+</style>
+
+<div class="page">
+  <header class="topbar">
+    <div class="wrap tb">
+      <div class="logo">Ava <b>Sorenson</b></div>
+      <nav class="tnav">
+        <a href="#about">About</a>
+        <a href="#partner">Partner</a>
+        <a href="#press">Press</a>
+        <a class="btn small" href="#contact">Work With Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <div class="kicker">
+          <span class="label">University of Utah Gymnastics</span>
+          <span class="chip">Est. NIL 2024</span>
+        </div>
+        <h1>Ava<br><span>Sorenson</span></h1>
+        <div class="sub">All-Around &middot; Beam Specialist &middot; #22</div>
+        <p class="lede">Sophomore gymnast, Red Rocks. I bring a passionate, sold-out arena of fans along for the ride &mdash; and I partner with brands I actually believe in.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#contact">Work With Me</a>
+          <a class="btn line" href="#partner">See Partnership Options</a>
+        </div>
+      </div>
+      <div class="hero-photo photo" data-tag="Photo — swap in"><span class="huge">22</span></div>
+    </div>
+
+    <div class="wrap" style="padding:0;">
+      <div class="stats">
+        <div class="wrap stats-grid" style="padding-left:0;padding-right:0;">
+          <div class="stat"><div class="n">214K</div><div class="l">Total followers</div></div>
+          <div class="stat"><div class="n">3.1M</div><div class="l">Avg monthly views</div></div>
+          <div class="stat"><div class="n">8.4%</div><div class="l">Engagement rate</div></div>
+          <div class="stat"><div class="n">15K+</div><div class="l">Live in-arena / meet</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about-grid">
+      <div class="about-photo photo reveal" data-tag="Photo — swap in"><span class="huge">AS</span></div>
+      <div class="about reveal">
+        <div class="sec-label"><span class="label">About Ava</span></div>
+        <h2>A gymnast with a stage &mdash; and an audience that shows up.</h2>
+        <p>I grew up in Lehi chalking my hands before I could spell my name. Now I compete in front of one of the largest, loudest crowds in the sport and share every step &mdash; training, meets, recovery, and real life &mdash; with a community that trusts what I put in front of them.</p>
+        <p>For brands, that means genuine reach: young athletes, gymnastics families, and Utah fans who buy what I stand behind.</p>
+        <div class="facts">
+          <div><div class="fk">Class</div><div class="fv">Sophomore</div></div>
+          <div><div class="fk">Events</div><div class="fv">Beam &middot; Floor</div></div>
+          <div><div class="fk">Hometown</div><div class="fv">Lehi, Utah</div></div>
+          <div><div class="fk">Studying</div><div class="fv">Communications</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="partner" id="partner">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2>Ways to partner</h2>
+        <p>Every collaboration is built around content that feels real to my audience &mdash; never bolted on. Rates on request; bundles available for multi-post campaigns.</p>
+      </div>
+      <div class="pkg-grid">
+        <div class="pkg reveal">
+          <div class="pk-top"><h3>Social Feature</h3><span class="from">Request rates</span></div>
+          <p>A dedicated post or short-form video across Instagram &amp; TikTok, written and shot in my voice.</p>
+          <ul><li>1 in-feed post + story set</li><li>Usage rights for your channels</li><li>Draft approval before it goes live</li></ul>
+        </div>
+        <div class="pkg reveal">
+          <div class="pk-top"><h3>Appearance</h3><span class="from">Request rates</span></div>
+          <p>Show up in person &mdash; camp, clinic, store opening, or brand event &mdash; with photo &amp; content coverage included.</p>
+          <ul><li>Up to 2 hours on-site</li><li>Meet &amp; greet + signatures</li><li>Recap content for both of us</li></ul>
+        </div>
+        <div class="pkg reveal">
+          <div class="pk-top"><h3>Product Collab / UGC</h3><span class="from">Request rates</span></div>
+          <p>Authentic content creation for your product &mdash; unboxings, demos, and ready-to-run UGC ads.</p>
+          <ul><li>3&ndash;5 pieces of raw UGC</li><li>Whitelisting available</li><li>Perfect for apparel &amp; wellness</li></ul>
+        </div>
+        <div class="pkg reveal">
+          <div class="pk-top"><h3>Season Ambassador</h3><span class="from">Request rates</span></div>
+          <p>My favorite: an ongoing partnership across the season with consistent, layered storytelling.</p>
+          <ul><li>Monthly content cadence</li><li>Priority for events &amp; launches</li><li>Best value per placement</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brands">
+    <div class="wrap reveal">
+      <div class="sec-label" style="justify-content:center;"><span class="label">Trusted By</span></div>
+      <div class="row">
+        <span>Wasatch Athletic</span>
+        <span>Chalk &amp; Co.</span>
+        <span>SLC Nutrition</span>
+        <span>Summit Leotards</span>
+        <span>Redline Sports</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <div class="sec-label reveal"><span class="label">In Frame</span></div>
+      <div class="gal-grid reveal">
+        <div class="photo g1" data-tag="Photo"><span class="huge" style="font-size:8rem;bottom:0;right:6px;">01</span></div>
+        <div class="photo g2" data-tag="Photo"></div>
+        <div class="photo g3" data-tag="Photo"></div>
+        <div class="photo g4" data-tag="Photo"></div>
+        <div class="photo g5" data-tag="Photo"></div>
+        <div class="photo g6" data-tag="Photo"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="press" id="press">
+    <div class="wrap reveal">
+      <span class="label">In The Press</span>
+      <h2>Coverage that puts your brand in good company.</h2>
+      <div class="press-list">
+        <div><div class="pub">The Salt Lake Tribune</div><div class="quo">"A breakout personality as magnetic off the mat as on it."</div></div>
+        <div><div class="pub">Red Rocks Weekly</div><div class="quo">"One of the most-followed athletes in the program's history."</div></div>
+        <div><div class="pub">College Gym News</div><div class="quo">"Setting the standard for how athletes build a brand."</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <div class="sec-label"><span class="label">Work With Me</span></div>
+        <h2>Let's build something real.</h2>
+        <p class="ci">Tell me a little about your brand and what you have in mind. I read every inquiry personally and reply within a few days.</p>
+        <div class="direct">
+          <span class="label" style="color:var(--muted);">Or reach my team directly</span>
+          <b>partnerships@avasorenson.example</b>
+          <b>@ava.sorenson</b>
+        </div>
+      </div>
+      <form class="card reveal" id="brandForm" novalidate>
+        <div class="fields">
+          <div class="row2">
+            <div class="field"><label for="co">Brand / company</label><input id="co" required></div>
+            <div class="field"><label for="nm">Your name</label><input id="nm" required></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="em">Email</label><input id="em" type="email" required></div>
+            <div class="field"><label for="bud">Budget range</label>
+              <select id="bud">
+                <option>Under $500</option>
+                <option>$500 &ndash; $1,500</option>
+                <option>$1,500 &ndash; $5,000</option>
+                <option>$5,000+</option>
+                <option>Ongoing / ambassador</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label for="typ">Type of partnership</label>
+            <select id="typ">
+              <option>Social feature</option>
+              <option>Appearance</option>
+              <option>Product collab / UGC</option>
+              <option>Season ambassador</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field"><label for="msg">What do you have in mind?</label><textarea id="msg" rows="4"></textarea></div>
+        </div>
+        <button class="btn" type="submit">Send Inquiry</button>
+        <div class="fnote">This goes straight to Ava's partnership inbox. No obligation.</div>
+        <div class="success">
+          <h3>Inquiry sent.</h3>
+          <p>Thanks, <span id="who">there</span> — your note is with Ava's team. Expect a reply within a few days.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot">
+      <div class="logo">Ava <b>Sorenson</b></div>
+      <div class="social">
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">YouTube</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var form = document.getElementById('brandForm');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var nm = document.getElementById('nm').value.trim();
+      if (nm) document.getElementById('who').textContent = nm.split(' ')[0];
+      form.classList.add('done');
+      form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var items = document.querySelectorAll('.reveal');
+    if (reduce || !('IntersectionObserver' in window)) {
+      items.forEach(function (i) { i.classList.add('in'); });
+    } else {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, { threshold: 0.12 });
+      items.forEach(function (i) { io.observe(i); });
+    }
+  })();
+</script>
+</body>
+</html>
