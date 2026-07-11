@@ -1,0 +1,6 @@
+site/
+scripts/
+.github/
+.gitignore
+wrangler.jsonc
+.assetsignore

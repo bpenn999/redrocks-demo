@@ -1,0 +1,9 @@
+{
+  // Everything Senior Insurance — static site served via Cloudflare Workers assets
+  // Used by the dashboard "Create application" git flow (npx wrangler deploy).
+  "name": "everything-senior-insurance",
+  "compatibility_date": "2026-07-11",
+  "assets": {
+    "directory": "./"
+  }
+}
