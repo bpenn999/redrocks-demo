@@ -60,7 +60,7 @@ function footer() {
   const COLS = [
     { h: 'Company', links: [
       ['About Us', '/about/'], ['Meet the Team', '/about/'], ['Services', '/services/'],
-      ['Locations', '/contact/'], ['Blog & Resources', '/blog/'], ['Reviews', '/about/'],
+      ['Locations', '/contact/'], ['Blog & Resources', '/blog/'], ['The Everything Medicare Podcast', '/about/'], ['Reviews', '/about/'],
       ['License Verification', '/contact/'], ['Medicare Forms', '/tools/'], ['FAQ', '/#faq'],
       ['Contact', '/contact/'], ['Privacy Policy', '/contact/'] ] },
     { h: 'Medicare 101', links: [
@@ -213,6 +213,11 @@ function home() {
     <div class="videoframe"><iframe src="https://www.youtube-nocookie.com/embed/${esc(A.videoId)}" title="${esc(A.videoTitle)}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
   </div></div></section>`;
 
+  const podcast = A.podcast ? `<section class="section tight"><div class="wrap"><div class="ctaband reveal" style="background:linear-gradient(135deg,#1c8ba6,var(--primary-deep));text-align:left;display:grid;grid-template-columns:auto 1fr auto;gap:26px;align-items:center">
+    <div style="font-size:3.2rem" aria-hidden="true">🎙️</div>
+    <div><span class="eyebrow" style="color:#9fe8f2">Since ${esc(A.podcast.since)}</span><h2 style="margin-bottom:6px">${esc(A.podcast.name)}</h2><p style="margin:0;text-align:left;max-width:64ch">${esc(A.podcast.tagline)} Hosted by ${esc(A.podcast.host)}, each episode answers real listener questions and keeps you current on Medicare rules, policies, and coverage choices.</p></div>
+    <a class="btn btn-accent" href="${esc(A.podcast.url)}" target="_blank" rel="noopener" style="white-space:nowrap">Listen to the podcast →</a>
+  </div></div></section>` : '';
   const faq = `<section class="section" id="faq"><div class="wrap" style="max-width:820px">
     <div class="center reveal"><span class="eyebrow">Common questions</span><h2>Straight answers</h2></div>
     <div class="faq" style="margin-top:36px">${data.faq.map(f => `<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('')}</div>
@@ -225,7 +230,7 @@ function home() {
     desc: `${A.tagline}. Independent, local help comparing Medicare Advantage, Medigap, Part D and ACA plans. No cost to compare.`,
     active: '/',
     schema: [localBusiness(), faqSchema(data.faq)],
-    body: hero + trustbar + services + databand + how + video + faq + cta,
+    body: hero + trustbar + services + databand + how + video + podcast + faq + cta,
     extraJs: `<script src="/experiences/borealis.js" defer></script>`
   });
 }
@@ -370,6 +375,7 @@ function aboutPage() {
     <div class="prose"><p>${esc(A.advisor)} is an independent, ${esc(A.city)}–based ${esc(A.advisorTitle).toLowerCase()} focused on Medicare and senior insurance. Independent means ${esc(A.advisor.split(' ')[0])} isn't tied to one insurance company — so the guidance you get is based on your doctors, your prescriptions, and your budget, not a single carrier's lineup.</p>
     <h2>How we work</h2><p>We keep it human. You'll get a real person who explains your options in plain English, checks that your doctors and medications are covered before you enroll, and reviews your plan every fall so it keeps fitting as plans change.</p>
     <h2>What we help with</h2><ul>${data.productLines.map(p => `<li><b>${esc(p.name)}</b> — ${esc(p.short)}</li>`).join('')}</ul>
+    ${A.podcast ? `<h2>${esc(A.podcast.name)}</h2><p>${esc(A.podcast.tagline)}</p><p>${esc(A.podcast.blurb)}</p><p><a class="btn btn-ghost" href="${esc(A.podcast.url)}" target="_blank" rel="noopener">🎙️ Listen to the podcast →</a></p>` : ''}
     <h2>Our promise</h2><p>No pressure, no jargon, and no cost to compare. If a plan isn't right for you, we'll say so.</p>
     <a class="btn btn-primary" href="/contact/">${esc(A.cta)} →</a></div>
   </div></div></section>`;

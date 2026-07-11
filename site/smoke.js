@@ -13,7 +13,7 @@ const server = http.createServer((req, res) => {
   const pg = await b.newPage({ viewport: { width: 1280, height: 900 } });
   await pg.goto('http://localhost:4600/', { waitUntil: 'load' });
   // funnel: type ZIP + continue
-  await pg.fill('#zip', '84101'); await pg.click('#zip-go');
+  await pg.fill('#zip', '84532'); await pg.click('#zip-go');
   await pg.fill('#age', '66'); await pg.click('#age-go');
   await pg.click('[data-key="path"][data-choice="advantage"]');
   await pg.click('[data-key="doctors"][data-choice="med"]');

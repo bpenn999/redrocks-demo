@@ -70,7 +70,9 @@ p { margin: 0 0 1rem; }
 
 /* ---------- top nav ---------- */
 .nav { position: sticky; top: 0; z-index: 60; background: rgba(247,250,251,.86); backdrop-filter: saturate(150%) blur(12px); border-bottom: 1px solid var(--line); }
-.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; min-height: 68px; height: auto; padding: 8px 0; gap: 14px; }
+.brand b, .brand span { white-space: nowrap; }
+@media (max-width: 1280px) { .brand span { display: none; } }
 .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; color: var(--ink); }
 .brand .logo { width: 42px; height: 42px; border-radius: 11px; background: linear-gradient(150deg, var(--teal), var(--primary)); color: #fff; display: grid; place-items: center; font-family: var(--font-head); font-weight: 800; font-size: .95rem; box-shadow: var(--shadow); flex: 0 0 auto; }
 .brand .logo svg { width: 26px; height: 26px; display: block; }

@@ -28,6 +28,14 @@
     "reviews": { "rating": "5.0", "count": "283", "source": "Google" },
     "videoId": "BS-HOCb1fRQ",
     "videoTitle": "Meet Christian Brindle — how we help you choose Medicare with confidence",
+    "podcast": {
+      "name": "The Everything Medicare Podcast",
+      "host": "Christian Brindle",
+      "since": "2018",
+      "tagline": "One of the most trusted and plentiful resources for all things Medicare.",
+      "blurb": "Since its inception in 2018, the show has remained true to its original mission: to deliver a new level of clarity and understanding around Medicare options — something that had been severely lacking in the industry. With a strong commitment to education, transparency, and real-world insights, the podcast has helped thousands of listeners across the country navigate the often confusing world of Medicare with confidence. Each episode dives into important topics, answers listener questions, and provides up-to-date information on changes in Medicare laws, policies, and coverage choices.",
+      "url": "https://podcasts.apple.com/us/search?term=the%20everything%20medicare%20podcast"
+    },
     "brandVoice": "Warm, plain-spoken, patient, and genuinely helpful. Explains Medicare like a trusted neighbor, never a salesperson. No jargon, no pressure.",
     "cta": "Talk to a licensed advisor",
     "bookingUrl": "#contact"
