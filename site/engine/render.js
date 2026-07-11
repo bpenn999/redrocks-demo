@@ -12,6 +12,8 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const DIST = path.resolve(__dirname, '..', '..'); // publish to the repo root
 const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'content', 'agency.json'), 'utf8'));
+const blogFile = path.join(ROOT, 'content', 'blog.json');
+const blog = fs.existsSync(blogFile) ? (JSON.parse(fs.readFileSync(blogFile, 'utf8')).posts || []) : [];
 const A = data.agency, B = data.brand, C = data.compliance;
 const YEAR = new Date('2026-07-11').getFullYear(); // build stamp (fixed for reproducibility)
 const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -44,7 +46,7 @@ function brandMark(dark) {
 }
 
 function nav(active) {
-  const items = [['Home', '/'], ['Services', '/services/'], ['Learn', '/learn/'], ['Tools', '/tools/'], ['About', '/about/'], ['Contact', '/contact/']];
+  const items = [['Home', '/'], ['Services', '/services/'], ['Learn', '/learn/'], ['Blog', '/blog/'], ['Tools', '/tools/'], ['About', '/about/'], ['Contact', '/contact/']];
   const brand = brandMark(false) || `<a class="brand" href="/"><span class="logo" aria-hidden="true">${ICEBERG}</span><b>${esc(A.shortName)}<span>Medicare · ACA · Senior — Utah</span></b></a>`;
   return `<header class="nav"><div class="wrap nav-inner">
   ${brand}
@@ -58,7 +60,7 @@ function footer() {
   const COLS = [
     { h: 'Company', links: [
       ['About Us', '/about/'], ['Meet the Team', '/about/'], ['Services', '/services/'],
-      ['Locations', '/contact/'], ['Blog & Resources', '/learn/'], ['Reviews', '/about/'],
+      ['Locations', '/contact/'], ['Blog & Resources', '/blog/'], ['Reviews', '/about/'],
       ['License Verification', '/contact/'], ['Medicare Forms', '/tools/'], ['FAQ', '/#faq'],
       ['Contact', '/contact/'], ['Privacy Policy', '/contact/'] ] },
     { h: 'Medicare 101', links: [
@@ -226,6 +228,42 @@ function home() {
     body: hero + trustbar + services + databand + how + video + faq + cta,
     extraJs: `<script src="/experiences/borealis.js" defer></script>`
   });
+}
+
+/* ---------- BLOG (local Sandy / SLC) ---------- */
+function fmtDate(iso) { const d = new Date(iso + 'T00:00:00'); return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }); }
+function blogHub() {
+  const trail = [['Home', '/'], ['Blog', '/blog/']];
+  const posts = blog.slice().sort((a, b) => (a.date < b.date ? 1 : -1));
+  const cards = posts.map(p => `<a class="card hover" href="/blog/${p.slug}/" style="text-decoration:none;color:inherit"><span class="tag">${esc(p.category)}${p.location ? ' · ' + esc(p.location) : ''}</span><h3 style="margin-top:12px">${esc(p.title)}</h3><p style="color:var(--muted)">${esc(p.excerpt)}</p><span class="more">${fmtDate(p.date)} · ${esc(p.read)} →</span></a>`).join('');
+  const body = `${crumbs(trail)}
+  <section class="pagehead"><div class="wrap"><span class="eyebrow">Blog</span><h1>Medicare news & tips for Sandy & Salt Lake City</h1><p class="lead">Local, plain-English Medicare updates from your ${esc(A.city)} advisor — refreshed regularly.</p></div></section>
+  <section class="section"><div class="wrap"><div class="grid cols-3">${cards || '<p>New posts are on the way.</p>'}</div></div></section>`;
+  return page({ title: `Blog — Medicare news for Sandy & Salt Lake City — ${A.shortName}`, desc: 'Local Sandy and Salt Lake City Medicare news, tips, and 2026 updates from an independent advisor.', active: '/blog/', schema: [crumbSchema(trail), { '@context': 'https://schema.org', '@type': 'Blog', name: `${A.name} Blog`, url: '/blog/', publisher: orgAuthor }], body });
+}
+function blogPost(p) {
+  const trail = [['Home', '/'], ['Blog', '/blog/'], [p.title.split(':')[0], `/blog/${p.slug}/`]];
+  const artSchema = { '@context': 'https://schema.org', '@type': 'BlogPosting', headline: p.title, description: p.excerpt, author: orgAuthor, publisher: orgAuthor, datePublished: p.date, dateModified: p.updated || p.date, reviewedBy: { '@type': 'Person', name: A.advisor, jobTitle: A.advisorTitle }, mainEntityOfPage: `/blog/${p.slug}/`, about: 'Medicare', keywords: (p.keywords || []).join(', ') };
+  const datasets = (p.sources || []).map(s => ({ '@context': 'https://schema.org', '@type': 'Dataset', name: s.name, creator: { '@type': 'Organization', name: s.name, url: s.url }, license: 'https://creativecommons.org/publicdomain/zero/1.0/', isAccessibleForFree: true }));
+  const schema = [artSchema, crumbSchema(trail)].concat(p.faq ? [faqSchema(p.faq)] : []).concat(datasets);
+  const tldr = p.tldr ? `<div class="card" style="background:var(--soft);border-left:4px solid var(--accent)"><h3 style="margin-top:0">Key takeaways</h3><ul>${p.tldr.map(t => `<li>${esc(t)}</li>`).join('')}</ul></div>` : '';
+  const bodyHtml = p.body.map(s => `<h2>${esc(s.h)}</h2>${(s.p || []).filter(Boolean).map(x => `<p>${esc(x)}</p>`).join('')}${s.list ? `<ul>${s.list.map(li => `<li>${esc(li)}</li>`).join('')}</ul>` : ''}`).join('');
+  const faqHtml = p.faq ? `<h2>Frequently asked questions</h2><div class="faq">${p.faq.map(f => `<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('')}</div>` : '';
+  const sourcesHtml = p.sources ? `<h2>Sources</h2><ul>${p.sources.map(s => `<li><a href="${esc(s.url)}" rel="nofollow">${esc(s.name)}</a></li>`).join('')}</ul>` : '';
+  const related = blog.filter(x => x.slug !== p.slug).slice(0, 3);
+  const relHtml = related.length ? `<section class="section tight"><div class="wrap"><h2>More from the blog</h2><div class="grid cols-3" style="margin-top:24px">${related.map(r => `<a class="card hover" href="/blog/${r.slug}/" style="text-decoration:none;color:inherit"><span class="tag">${esc(r.category)}</span><h3 style="margin-top:10px;font-size:1.1rem">${esc(r.title)}</h3><span class="more">Read →</span></a>`).join('')}</div></div></section>` : '';
+  const body = `${crumbs(trail)}
+  <section class="pagehead"><div class="wrap" style="max-width:820px"><span class="tag">${esc(p.category)}${p.location ? ' · ' + esc(p.location) : ''} · ${esc(p.read)} read</span><h1 style="margin-top:14px">${esc(p.title)}</h1><p class="lead">${esc(p.excerpt)}</p><p style="font-size:.85rem;color:var(--muted)">By the ${esc(A.shortName)} Data Desk · Reviewed by ${esc(A.advisor)}, ${esc(A.advisorTitle)} · Published ${fmtDate(p.date)}${p.updated && p.updated !== p.date ? ` · Updated ${fmtDate(p.updated)}` : ''}</p></div></section>
+  <section class="section"><div class="wrap" style="max-width:760px"><div class="prose">
+  ${tldr}
+  ${bodyHtml}
+  ${faqHtml}
+  <div class="card" style="margin-top:36px;background:var(--soft)"><h3>Questions about this in Sandy or Salt Lake City?</h3><p style="color:var(--muted)">Talk to a local, licensed advisor — free, no pressure.</p><a class="btn btn-primary" href="/contact/">${esc(A.cta)} →</a></div>
+  ${sourcesHtml}
+  <p class="disclaimer" style="border-top:1px solid var(--line);color:var(--muted);font-size:.78rem;margin-top:24px;padding-top:16px">${esc(C.informational)} ${esc(C.tpmo)}</p>
+  </div></div></section>
+  ${relHtml}`;
+  return page({ title: `${p.title} — ${A.shortName}`, desc: p.excerpt, active: '/blog/', schema, body });
 }
 
 /* ---------- SERVICES HUB + PAGES ---------- */
@@ -399,6 +437,8 @@ written.push(write('services', servicesHub()));
 data.productLines.forEach(p => written.push(write(`services/${p.slug}`, servicePage(p))));
 written.push(write('learn', learnHub()));
 data.learn.forEach(l => written.push(write(`learn/${l.slug}`, articlePage(l))));
+written.push(write('blog', blogHub()));
+blog.forEach(p => written.push(write(`blog/${p.slug}`, blogPost(p))));
 written.push(write('tools', toolsPage()));
 written.push(write('about', aboutPage()));
 written.push(write('contact', contactPage()));

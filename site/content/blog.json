@@ -1,0 +1,104 @@
+{
+  "note": "Local Sandy / Salt Lake City Medicare blog. Seeded posts follow the Ambrose medicare-blog-writer skill; figures are CY2026, verified via the Ambrose Brain (CMS Medicare Plan Landscape) or CMS.gov. Daily posts are prepended by engine/add-post.js. Newest first.",
+  "posts": [
+    {
+      "slug": "medicare-advantage-salt-lake-county-2026",
+      "title": "Choosing a Medicare Advantage Plan in Salt Lake County (2026 Guide)",
+      "date": "2026-07-11",
+      "updated": "2026-07-11",
+      "category": "Local Guide",
+      "read": "7 min",
+      "location": "Salt Lake County, Utah",
+      "excerpt": "Salt Lake County has 41 Medicare Advantage plans for 2026 — 17 of the 24 MA-PD plans at $0 premium. Here's how to pick the right one for your doctors and prescriptions, from a Sandy-based advisor.",
+      "keywords": ["Medicare Advantage Salt Lake County", "Medicare Advantage Sandy Utah 2026", "choose Medicare plan Utah"],
+      "tldr": [
+        "Salt Lake County offers 41 Medicare Advantage plans for CY2026 (24 MA-PD + 17 Special Needs Plans).",
+        "17 of the 24 MA-PD plans have a $0 monthly premium — but you still pay your Part B premium ($202.90 in 2026).",
+        "The top plan in the county carries a 4.5-star CMS rating; out-of-pocket maximums range from $3,500 to $9,250.",
+        "The right plan depends on whether your Sandy/SLC doctors are in-network and your drugs are covered — not the premium alone."
+      ],
+      "body": [
+        { "h": "How many Medicare Advantage plans are in Salt Lake County for 2026?", "p": ["For the 2026 plan year, Salt Lake County residents can choose from 41 Medicare Advantage plans, according to the CMS Medicare Plan Landscape: 24 standard Medicare Advantage Prescription Drug (MA-PD) plans plus 17 Special Needs Plans (SNPs) for people with specific conditions or dual Medicare/Medicaid eligibility. That's a lot of choice for one county — which is good news, and also why comparing carefully matters."] },
+        { "h": "What will a plan cost in Sandy and Salt Lake City?", "p": ["Of the 24 MA-PD plans, 17 carry a $0 monthly plan premium for 2026. A $0-premium plan does not mean free care: you still pay your Medicare Part B premium ($202.90 standard in 2026), and you'll have copays and coinsurance as you use services. What protects you is the plan's in-network maximum out-of-pocket (MOOP) limit, which for Salt Lake County 2026 plans ranges from $3,500 to $9,250. Once you hit that ceiling, the plan pays 100% of covered in-network care for the rest of the year."], "list": ["17 of 24 MA-PD plans: $0 plan premium (2026)", "Part B premium still applies: $202.90/mo standard (2026)", "In-network out-of-pocket max: $3,500–$9,250 (2026)", "Top overall CMS star rating in the county: 4.5 stars"] },
+        { "h": "Does the plan cover your doctors and hospitals?", "p": ["This is the question that actually decides which plan is right. Medicare Advantage plans in Utah are usually built around a network — often anchored by Intermountain Health or University of Utah Health. Before you enroll, we confirm that your primary care doctor, any specialists, and your preferred hospital (say, Alta View or Intermountain Medical Center for many Sandy-area residents) are in the plan's network. A $0-premium plan is only a good deal if it covers the care you actually use."] },
+        { "h": "Do your prescriptions fit the plan's drug list?", "p": ["Every MA-PD plan has its own formulary — the list of drugs it covers and the tier (and cost) of each. Two people on the same medications can pay very different amounts depending on the plan. We match your exact prescription list to each plan's formulary and preferred pharmacies. In 2026, your Part D out-of-pocket drug spending is capped at $2,100 for the year — a major protection — but plan choice still decides how quickly and cheaply you get there."] },
+        { "h": "A simple way to choose", "p": ["List your doctors, your prescriptions, and the pharmacy you like. Then compare plans against that exact list — networks first, drugs second, extras (dental, vision, hearing) third, and premium last. As an independent, Sandy-based agency near 9000 South, we do this comparison with you at no cost, and we review it again each fall so your plan keeps fitting as it changes."] }
+      ],
+      "faq": [
+        { "q": "How many Medicare Advantage plans are available in Salt Lake County in 2026?", "a": "41 Medicare Advantage plans — 24 MA-PD plans and 17 Special Needs Plans — per the CMS Medicare Plan Landscape for CY2026." },
+        { "q": "Are there $0-premium Medicare Advantage plans in Sandy, Utah?", "a": "Yes. 17 of the 24 Salt Lake County MA-PD plans have a $0 monthly plan premium for 2026. You still pay your Part B premium and any copays." },
+        { "q": "Does a $0-premium plan mean free healthcare?", "a": "No. You still pay your Medicare Part B premium ($202.90 standard in 2026) plus copays and coinsurance up to the plan's out-of-pocket maximum, which ranges from $3,500 to $9,250 for 2026 Salt Lake County plans." }
+      ],
+      "sources": [
+        { "name": "CMS Medicare Plan Landscape CY2026 (via Ambrose Brain)", "url": "https://www.cms.gov/medicare/health-drug-plans" },
+        { "name": "Medicare.gov — Plan Finder", "url": "https://www.medicare.gov/plan-compare" },
+        { "name": "CMS.gov — 2026 Medicare Parts A & B premiums and deductibles", "url": "https://www.cms.gov/" }
+      ]
+    },
+    {
+      "slug": "medicare-changes-2026-sandy-utah",
+      "title": "Medicare in Sandy, Utah for 2026: What's Changing and What It Means for You",
+      "date": "2026-07-10",
+      "updated": "2026-07-10",
+      "category": "News",
+      "read": "6 min",
+      "location": "Sandy, Utah",
+      "excerpt": "The 2026 Part D out-of-pocket cap rises to $2,100, Part B premiums tick up, and plan lineups shift. Here's what Sandy and Salt Lake City seniors should know before fall enrollment.",
+      "keywords": ["2026 Medicare changes", "Part D cap 2026", "Medicare Sandy Utah", "Part B premium 2026"],
+      "tldr": [
+        "The Part D out-of-pocket cap rises to $2,100 for 2026 (up from $2,000 in 2025).",
+        "The standard Part B premium is $202.90/mo in 2026, with a $283 annual deductible.",
+        "The Part A hospital deductible is $1,736 per benefit period in 2026.",
+        "Plans change every year — review yours during the Annual Enrollment Period, October 15 – December 7."
+      ],
+      "body": [
+        { "h": "The headline change: a $2,100 Part D drug cap", "p": ["The biggest 2026 change for Sandy and Salt Lake City seniors is the Medicare Part D out-of-pocket cap. Thanks to the Inflation Reduction Act, once your out-of-pocket spending on covered prescription drugs reaches $2,100 in 2026, you pay $0 for covered drugs the rest of the year. That's up modestly from the $2,000 cap in 2025, and the old 'donut hole' coverage gap is gone. If your drug costs are front-loaded early in the year, you can also spread them over 12 months through the Medicare Prescription Payment Plan."] },
+        { "h": "What Part A and Part B cost in 2026", "p": ["Most people get premium-free Part A because they paid Medicare taxes while working, but Part A still has a hospital deductible of $1,736 per benefit period in 2026. Part B has a standard monthly premium of $202.90 and a $283 annual deductible in 2026; higher earners pay more through IRMAA, which is based on your income from two years prior (2024 for 2026)."], "list": ["Part D out-of-pocket cap: $2,100 (2026)", "Part B standard premium: $202.90/mo (2026)", "Part B annual deductible: $283 (2026)", "Part A hospital deductible: $1,736 per benefit period (2026)"] },
+        { "h": "Local plan lineups shift too", "p": ["Every fall, carriers change premiums, drug formularies, provider networks, and extra benefits for the coming year. For 2026, Salt Lake County has 41 Medicare Advantage plans (24 MA-PD plus 17 Special Needs Plans), with 17 of the 24 MA-PD plans at a $0 premium. A benefit that was great this year can quietly change next year — which is exactly why an annual review matters."] },
+        { "h": "What Sandy & SLC seniors should do now", "p": ["Mark the Annual Enrollment Period: October 15 through December 7. That's your window to switch Medicare Advantage or Part D plans for 2026. Before then, list your current doctors and medications so you (or your advisor) can check them against next year's plans. If you're already enrolled, don't auto-renew blindly — a five-minute review can catch a formulary change that would cost you hundreds."] }
+      ],
+      "faq": [
+        { "q": "What is the Medicare Part D out-of-pocket cap for 2026?", "a": "$2,100. Once your out-of-pocket spending on covered Part D drugs reaches $2,100 in 2026, you pay $0 for covered drugs for the rest of the year." },
+        { "q": "How much is the Part B premium in 2026?", "a": "The standard Part B premium is $202.90 per month in 2026, with a $283 annual deductible. Higher-income beneficiaries pay more through IRMAA." },
+        { "q": "When can I change my Medicare plan for 2026?", "a": "During the Annual Enrollment Period, October 15 through December 7. A Medicare Advantage Open Enrollment Period also runs January 1 – March 31 for those already in an Advantage plan." }
+      ],
+      "sources": [
+        { "name": "Medicare.gov — Costs", "url": "https://www.medicare.gov/basics/costs" },
+        { "name": "CMS.gov — 2026 Medicare Parts A & B premiums and deductibles", "url": "https://www.cms.gov/" },
+        { "name": "CMS Medicare Plan Landscape CY2026 (via Ambrose Brain)", "url": "https://www.cms.gov/medicare/health-drug-plans" }
+      ]
+    },
+    {
+      "slug": "turning-65-salt-lake-city-enrollment-timeline",
+      "title": "Turning 65 in Salt Lake City? Your 2026 Medicare Enrollment Timeline",
+      "date": "2026-07-09",
+      "updated": "2026-07-09",
+      "category": "How-To",
+      "read": "6 min",
+      "location": "Salt Lake City, Utah",
+      "excerpt": "A clear, month-by-month Medicare enrollment timeline for people turning 65 in Salt Lake City and Sandy — when your window opens, what to do, and how to avoid lifelong penalties.",
+      "keywords": ["turning 65 Medicare Utah", "Medicare enrollment Salt Lake City", "Initial Enrollment Period 2026"],
+      "tldr": [
+        "Your Initial Enrollment Period (IEP) is a 7-month window around your 65th birthday.",
+        "Enroll in the 3 months before your birthday month so coverage can start the month you turn 65.",
+        "Miss it without other creditable coverage and you can face lifelong Part B and Part D penalties.",
+        "A local, independent advisor can map your options in about 20 minutes at no cost."
+      ],
+      "body": [
+        { "h": "When does your Medicare window open?", "p": ["If you're turning 65 in Salt Lake City or Sandy, your first chance to enroll is your Initial Enrollment Period (IEP) — a 7-month window that starts 3 months before your birthday month, includes your birthday month, and ends 3 months after. Enrolling in those first three months means your coverage can begin the month you turn 65, with no gap."], "list": ["3 months before your birthday month — enroll here for coverage on time", "Your birthday month", "3 months after — 7 months total"] },
+        { "h": "Still working past 65?", "p": ["If you (or your spouse) are still working and covered by an employer group health plan, you may be able to delay Part B without penalty and enroll later through a Special Enrollment Period. But the rules depend on employer size and how your coverage is structured — get it checked before you delay, because a wrong assumption here can trigger a lifelong penalty."] },
+        { "h": "The penalties you're avoiding", "p": ["Timing isn't just paperwork. Go without Part B when you should have enrolled and Medicare can add 10% to your Part B premium for each full 12-month period you delayed — for life. Go without creditable drug coverage and a Part D late penalty (1% of the national base premium per month) gets added to your drug plan premium for as long as you have Part D. Enrolling on time, even in a low-cost plan, protects you long-term."] },
+        { "h": "Your Salt Lake City checklist", "p": ["Three months before you turn 65, gather your list of doctors and medications, decide between Original Medicare (often with a Medigap plan and a Part D drug plan) or a Medicare Advantage plan, and enroll. As an independent, Sandy-based agency, we'll walk you through it in plain English and make sure your local doctors and prescriptions are covered before you commit — at no cost to you."] }
+      ],
+      "faq": [
+        { "q": "When should I sign up for Medicare if I'm turning 65?", "a": "During your Initial Enrollment Period — the 7-month window around your 65th birthday. Enroll in the 3 months before your birthday month so coverage starts on time." },
+        { "q": "Can I delay Medicare if I'm still working at 65?", "a": "Often yes, if you have creditable employer coverage — you may qualify for a Special Enrollment Period later. Confirm your situation first, because delaying incorrectly can cause lifelong penalties." },
+        { "q": "What happens if I miss my Medicare enrollment window?", "a": "You may face a lifelong Part B penalty (10% for each full 12 months delayed) and a Part D late-enrollment penalty, unless you had other creditable coverage." }
+      ],
+      "sources": [
+        { "name": "Medicare.gov — When to sign up", "url": "https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-does-medicare-coverage-start" },
+        { "name": "SSA.gov — Medicare enrollment", "url": "https://www.ssa.gov/medicare" }
+      ]
+    }
+  ]
+}

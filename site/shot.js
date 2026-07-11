@@ -14,7 +14,7 @@ const server = http.createServer((req, res) => {
   await new Promise(r => server.listen(4599, r));
   const browser = await chromium.launch({ executablePath: process.env.PW || undefined });
   const errors = [];
-  const shots = [['/', 'home'], ['/services/', 'services'], ['/services/medicare-advantage/', 'service'], ['/learn/', 'learn'], ['/learn/advantage-vs-medigap/', 'article'], ['/tools/', 'tools'], ['/contact/', 'contact'], ['/about/', 'about']];
+  const shots = [['/', 'home'], ['/services/', 'services'], ['/services/medicare-advantage/', 'service'], ['/learn/', 'learn'], ['/learn/advantage-vs-medigap/', 'article'], ['/tools/', 'tools'], ['/blog/', 'blog'], ['/blog/medicare-advantage-salt-lake-county-2026/', 'blogpost']];
   for (const [url, name] of shots) {
     const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
     page.on('console', m => { if (m.type() === 'error') errors.push(`[${name}] ${m.text()}`); });
