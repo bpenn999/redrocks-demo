@@ -50,8 +50,8 @@ Wire steps 1–2 to a daily scheduled Ambrose sequence / cron to auto-publish.
 
 Four facts can't be invented; they're marked `[PLACEHOLDER …]` in `agency.json → agency`:
 
-- `phone`, `email`, `address`, `npn`
-- Replace the `brand.*` color tokens + nav logo initials with Christian's **real logo & colors**
+- `npn` (only remaining placeholder — phone/email/address are real)
+- **Real logo:** drop the file at `site/assets/logo.png` (or `.svg`) and the nav uses it automatically — no code change. A faithful faceted-iceberg SVG mark ships as the fallback.
 - Wire the Contact form to **GoHighLevel (GHL)** (form/webhook)
 - Optional: replace the funnel's client-side estimate with a live
   `plan_quoter.medicare_plans` (THE BRAIN) call for real Salt Lake County plan counts

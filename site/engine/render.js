@@ -24,13 +24,30 @@ function brandTokens() {
   return `:root{--ink:${B.ink};--primary:${B.primary};--primary-deep:${B.primaryDeep};--accent:${B.accent};--teal:${B.teal || '#27a6bd'};--bg:${B.bg};--surface:${B.surface};--soft:${B.soft};--line:${B.line};--muted:${B.muted};${B.fontDisplay ? `--font-display:${B.fontDisplay};` : ''}--font-head:${B.fontHead};--font-body:${B.fontBody};}`;
 }
 
-// Iceberg logo mark — evokes the Everything Senior Insurance logo (drop in the real SVG/PNG when available)
-const ICEBERG = '<svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 3l5.5 9h-11L16 3z" fill="#fff"/><path d="M16 3l5.5 9H16V3z" fill="#dff3f7"/><path d="M3 13h26l-4.5 7.5L16 29l-8.5-8.5L3 13z" fill="#eaf6f9"/><path d="M16 12l9 1.5-4 7-5 8.5V12z" fill="#cfe9f0"/></svg>';
+// Faceted iceberg mark — recreates the Everything Senior Insurance logo icon.
+// Drop the REAL logo into site/assets/logo.(svg|png|webp|jpg) and the nav uses it automatically.
+const ICEBERG = '<svg viewBox="0 0 40 40" fill="none" aria-hidden="true">' +
+  '<path d="M20 4l8 16H12z" fill="#ffffff"/>' +
+  '<path d="M20 4v16h-8z" fill="#dff2f8"/>' +
+  '<path d="M14 12l4 8h-8z" fill="#eaf8fc"/>' +
+  '<path d="M6 21h28l-5 8.5L20 37l-9-7.5z" fill="#f2fbfd"/>' +
+  '<path d="M20 21h14l-5 8.5L20 37z" fill="#cfeaf3"/>' +
+  '<path d="M11 29.5L20 37V21h-6z" fill="#e4f5fa"/>' +
+  '<path d="M20 21h6l3 8.5L20 33z" fill="#bfe2ee"/>' +
+  '</svg>';
+const LOGO_EXT = ['svg', 'png', 'webp', 'jpg', 'jpeg'].find(e => fs.existsSync(path.join(ROOT, 'assets', 'logo.' + e)));
+const LOGO_SRC = LOGO_EXT ? '/assets/logo.' + LOGO_EXT : null;
+function brandMark(dark) {
+  // Use the real horizontal logo file in the light nav if provided; SVG iceberg elsewhere.
+  if (LOGO_SRC && !dark) return `<a class="brand brand-img" href="/"><img class="logo-full" src="${LOGO_SRC}" alt="${esc(A.name)} — ${esc(A.formerly || '')}" height="46"></a>`;
+  return null;
+}
 
 function nav(active) {
   const items = [['Home', '/'], ['Services', '/services/'], ['Learn', '/learn/'], ['Tools', '/tools/'], ['About', '/about/'], ['Contact', '/contact/']];
+  const brand = brandMark(false) || `<a class="brand" href="/"><span class="logo" aria-hidden="true">${ICEBERG}</span><b>${esc(A.shortName)}<span>Medicare · ACA · Senior — Utah</span></b></a>`;
   return `<header class="nav"><div class="wrap nav-inner">
-  <a class="brand" href="/"><span class="logo" aria-hidden="true">${ICEBERG}</span><b>${esc(A.shortName)}<span>Medicare · ACA · Senior — Utah</span></b></a>
+  ${brand}
   <nav class="nav-links" aria-label="Primary">${items.map(([l, h]) => `<a href="${h}"${h === active ? ' aria-current="page"' : ''}>${l}</a>`).join('')}</nav>
   <div class="nav-cta">${phone ? `<a class="btn btn-ghost" href="tel:${esc(phone.replace(/[^0-9+]/g, ''))}">${esc(phone)}</a>` : ''}<a class="btn btn-primary" href="/contact/">${esc(A.cta)}</a>
   <button class="nav-toggle" aria-label="Menu">☰</button></div>
