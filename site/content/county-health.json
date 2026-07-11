@@ -1,0 +1,895 @@
+{
+ "note": "CDC PLACES county crude prevalence (%), 2024 release (2022-2023 BRFSS). Source: data.cdc.gov dataset swc5-untb via Ambrose Brain (socrata_query). For geo county-health sections across Medicare sites.",
+ "source": "CDC PLACES",
+ "source_url": "https://www.cdc.gov/places/",
+ "dataset": "data.cdc.gov/swc5-untb",
+ "measures": {
+  "BPHIGH": "High blood pressure",
+  "OBESITY": "Obesity",
+  "DIABETES": "Diagnosed diabetes",
+  "CHD": "Coronary heart disease",
+  "ARTHRITIS": "Arthritis",
+  "HEARING": "Hearing disability"
+ },
+ "states": {
+  "AZ": {
+   "county_count": 15,
+   "counties": {
+    "Apache": {
+     "ARTHRITIS": 28.2,
+     "BPHIGH": 36.0,
+     "CHD": 9.3,
+     "DIABETES": 17.5,
+     "HEARING": 12.5,
+     "OBESITY": 35.8
+    },
+    "Cochise": {
+     "ARTHRITIS": 31.2,
+     "BPHIGH": 39.0,
+     "CHD": 8.3,
+     "DIABETES": 13.7,
+     "HEARING": 10.3,
+     "OBESITY": 31.2
+    },
+    "Coconino": {
+     "ARTHRITIS": 21.8,
+     "BPHIGH": 27.0,
+     "CHD": 5.4,
+     "DIABETES": 9.3,
+     "HEARING": 7.4,
+     "OBESITY": 23.6
+    },
+    "Gila": {
+     "ARTHRITIS": 35.2,
+     "BPHIGH": 39.3,
+     "CHD": 9.8,
+     "DIABETES": 15.0,
+     "HEARING": 12.2,
+     "OBESITY": 31.4
+    },
+    "Graham": {
+     "ARTHRITIS": 23.3,
+     "BPHIGH": 32.2,
+     "CHD": 6.4,
+     "DIABETES": 11.4,
+     "HEARING": 8.5,
+     "OBESITY": 36.0
+    },
+    "Greenlee": {
+     "ARTHRITIS": 22.5,
+     "BPHIGH": 29.8,
+     "CHD": 5.3,
+     "DIABETES": 10.6,
+     "HEARING": 7.1,
+     "OBESITY": 33.1
+    },
+    "La Paz": {
+     "ARTHRITIS": 39.0,
+     "BPHIGH": 46.3,
+     "CHD": 13.3,
+     "DIABETES": 17.5,
+     "HEARING": 16.1,
+     "OBESITY": 33.2
+    },
+    "Maricopa": {
+     "ARTHRITIS": 23.5,
+     "BPHIGH": 30.8,
+     "CHD": 5.7,
+     "DIABETES": 10.6,
+     "HEARING": 7.2,
+     "OBESITY": 30.4
+    },
+    "Mohave": {
+     "ARTHRITIS": 33.2,
+     "BPHIGH": 42.0,
+     "CHD": 10.0,
+     "DIABETES": 14.2,
+     "HEARING": 11.6,
+     "OBESITY": 32.7
+    },
+    "Navajo": {
+     "ARTHRITIS": 30.8,
+     "BPHIGH": 40.7,
+     "CHD": 8.9,
+     "DIABETES": 15.1,
+     "HEARING": 11.4,
+     "OBESITY": 37.6
+    },
+    "Pima": {
+     "ARTHRITIS": 25.8,
+     "BPHIGH": 34.1,
+     "CHD": 6.7,
+     "DIABETES": 11.0,
+     "HEARING": 8.6,
+     "OBESITY": 31.1
+    },
+    "Pinal": {
+     "ARTHRITIS": 28.1,
+     "BPHIGH": 36.2,
+     "CHD": 6.9,
+     "DIABETES": 12.9,
+     "HEARING": 8.8,
+     "OBESITY": 38.4
+    },
+    "Santa Cruz": {
+     "ARTHRITIS": 24.0,
+     "BPHIGH": 35.7,
+     "CHD": 7.5,
+     "DIABETES": 15.5,
+     "HEARING": 9.5,
+     "OBESITY": 34.2
+    },
+    "Yavapai": {
+     "ARTHRITIS": 33.6,
+     "BPHIGH": 38.0,
+     "CHD": 8.8,
+     "DIABETES": 12.1,
+     "HEARING": 10.5,
+     "OBESITY": 27.0
+    },
+    "Yuma": {
+     "ARTHRITIS": 25.0,
+     "BPHIGH": 35.3,
+     "CHD": 7.9,
+     "DIABETES": 14.5,
+     "HEARING": 9.9,
+     "OBESITY": 37.4
+    }
+   }
+  },
+  "CO": {
+   "county_count": 64,
+   "counties": {
+    "Adams": {
+     "ARTHRITIS": 20.0,
+     "BPHIGH": 27.3,
+     "CHD": 4.7,
+     "DIABETES": 9.7,
+     "HEARING": 6.0,
+     "OBESITY": 33.2
+    },
+    "Alamosa": {
+     "ARTHRITIS": 23.6,
+     "BPHIGH": 29.0,
+     "CHD": 6.2,
+     "DIABETES": 11.3,
+     "HEARING": 7.7,
+     "OBESITY": 30.3
+    },
+    "Arapahoe": {
+     "ARTHRITIS": 22.2,
+     "BPHIGH": 27.8,
+     "CHD": 4.9,
+     "DIABETES": 8.5,
+     "HEARING": 6.0,
+     "OBESITY": 26.1
+    },
+    "Archuleta": {
+     "ARTHRITIS": 31.9,
+     "BPHIGH": 35.4,
+     "CHD": 7.9,
+     "DIABETES": 11.7,
+     "HEARING": 9.0,
+     "OBESITY": 27.6
+    },
+    "Baca": {
+     "ARTHRITIS": 33.9,
+     "BPHIGH": 37.8,
+     "CHD": 9.6,
+     "DIABETES": 13.4,
+     "HEARING": 11.1,
+     "OBESITY": 29.9
+    },
+    "Bent": {
+     "ARTHRITIS": 28.3,
+     "BPHIGH": 36.9,
+     "CHD": 9.2,
+     "DIABETES": 14.7,
+     "HEARING": 10.6,
+     "OBESITY": 33.7
+    },
+    "Boulder": {
+     "ARTHRITIS": 20.7,
+     "BPHIGH": 21.9,
+     "CHD": 4.8,
+     "DIABETES": 7.1,
+     "HEARING": 5.9,
+     "OBESITY": 16.7
+    },
+    "Broomfield": {
+     "ARTHRITIS": 22.0,
+     "BPHIGH": 24.5,
+     "CHD": 4.4,
+     "DIABETES": 7.1,
+     "HEARING": 5.6,
+     "OBESITY": 22.3
+    },
+    "Chaffee": {
+     "ARTHRITIS": 29.2,
+     "BPHIGH": 32.3,
+     "CHD": 7.1,
+     "DIABETES": 10.2,
+     "HEARING": 8.2,
+     "OBESITY": 25.7
+    },
+    "Cheyenne": {
+     "ARTHRITIS": 29.9,
+     "BPHIGH": 33.8,
+     "CHD": 7.6,
+     "DIABETES": 11.3,
+     "HEARING": 8.9,
+     "OBESITY": 28.8
+    },
+    "Clear Creek": {
+     "ARTHRITIS": 26.7,
+     "BPHIGH": 30.3,
+     "CHD": 6.1,
+     "DIABETES": 9.0,
+     "HEARING": 7.1,
+     "OBESITY": 23.9
+    },
+    "Conejos": {
+     "ARTHRITIS": 26.9,
+     "BPHIGH": 32.9,
+     "CHD": 7.5,
+     "DIABETES": 13.8,
+     "HEARING": 8.9,
+     "OBESITY": 30.3
+    },
+    "Costilla": {
+     "ARTHRITIS": 31.2,
+     "BPHIGH": 38.1,
+     "CHD": 9.4,
+     "DIABETES": 17.0,
+     "HEARING": 10.6,
+     "OBESITY": 31.6
+    },
+    "Crowley": {
+     "ARTHRITIS": 22.5,
+     "BPHIGH": 31.0,
+     "CHD": 6.4,
+     "DIABETES": 11.0,
+     "HEARING": 7.9,
+     "OBESITY": 31.7
+    },
+    "Custer": {
+     "ARTHRITIS": 35.3,
+     "BPHIGH": 38.2,
+     "CHD": 8.8,
+     "DIABETES": 12.4,
+     "HEARING": 9.9,
+     "OBESITY": 26.6
+    },
+    "Delta": {
+     "ARTHRITIS": 33.5,
+     "BPHIGH": 37.5,
+     "CHD": 8.8,
+     "DIABETES": 12.4,
+     "HEARING": 10.1,
+     "OBESITY": 26.7
+    },
+    "Denver": {
+     "ARTHRITIS": 18.3,
+     "BPHIGH": 21.7,
+     "CHD": 4.1,
+     "DIABETES": 7.1,
+     "HEARING": 5.2,
+     "OBESITY": 21.6
+    },
+    "Dolores": {
+     "ARTHRITIS": 30.2,
+     "BPHIGH": 35.1,
+     "CHD": 7.9,
+     "DIABETES": 11.5,
+     "HEARING": 9.2,
+     "OBESITY": 27.3
+    },
+    "Douglas": {
+     "ARTHRITIS": 22.3,
+     "BPHIGH": 25.8,
+     "CHD": 4.3,
+     "DIABETES": 6.8,
+     "HEARING": 5.4,
+     "OBESITY": 25.3
+    },
+    "Eagle": {
+     "ARTHRITIS": 22.4,
+     "BPHIGH": 25.2,
+     "CHD": 5.1,
+     "DIABETES": 8.5,
+     "HEARING": 6.2,
+     "OBESITY": 24.3
+    },
+    "El Paso": {
+     "ARTHRITIS": 23.0,
+     "BPHIGH": 28.1,
+     "CHD": 4.9,
+     "DIABETES": 8.7,
+     "HEARING": 6.4,
+     "OBESITY": 28.3
+    },
+    "Elbert": {
+     "ARTHRITIS": 27.2,
+     "BPHIGH": 29.9,
+     "CHD": 5.9,
+     "DIABETES": 8.9,
+     "HEARING": 6.9,
+     "OBESITY": 24.8
+    },
+    "Fremont": {
+     "ARTHRITIS": 29.3,
+     "BPHIGH": 32.6,
+     "CHD": 7.6,
+     "DIABETES": 11.4,
+     "HEARING": 8.8,
+     "OBESITY": 30.6
+    },
+    "Garfield": {
+     "ARTHRITIS": 24.0,
+     "BPHIGH": 27.2,
+     "CHD": 5.5,
+     "DIABETES": 8.9,
+     "HEARING": 6.7,
+     "OBESITY": 24.0
+    },
+    "Gilpin": {
+     "ARTHRITIS": 27.6,
+     "BPHIGH": 31.1,
+     "CHD": 6.2,
+     "DIABETES": 9.6,
+     "HEARING": 7.0,
+     "OBESITY": 25.5
+    },
+    "Grand": {
+     "ARTHRITIS": 27.2,
+     "BPHIGH": 29.8,
+     "CHD": 6.2,
+     "DIABETES": 9.1,
+     "HEARING": 7.2,
+     "OBESITY": 24.3
+    },
+    "Gunnison": {
+     "ARTHRITIS": 21.2,
+     "BPHIGH": 24.2,
+     "CHD": 4.6,
+     "DIABETES": 7.1,
+     "HEARING": 5.8,
+     "OBESITY": 23.8
+    },
+    "Hinsdale": {
+     "ARTHRITIS": 31.8,
+     "BPHIGH": 34.1,
+     "CHD": 7.5,
+     "DIABETES": 10.0,
+     "HEARING": 8.9,
+     "OBESITY": 23.5
+    },
+    "Huerfano": {
+     "ARTHRITIS": 33.1,
+     "BPHIGH": 37.6,
+     "CHD": 9.1,
+     "DIABETES": 13.9,
+     "HEARING": 10.5,
+     "OBESITY": 27.5
+    },
+    "Jackson": {
+     "ARTHRITIS": 33.8,
+     "BPHIGH": 38.8,
+     "CHD": 9.6,
+     "DIABETES": 13.9,
+     "HEARING": 10.6,
+     "OBESITY": 30.0
+    },
+    "Jefferson": {
+     "ARTHRITIS": 25.0,
+     "BPHIGH": 27.7,
+     "CHD": 5.1,
+     "DIABETES": 8.3,
+     "HEARING": 6.3,
+     "OBESITY": 23.1
+    },
+    "Kiowa": {
+     "ARTHRITIS": 33.0,
+     "BPHIGH": 36.1,
+     "CHD": 8.7,
+     "DIABETES": 11.8,
+     "HEARING": 10.2,
+     "OBESITY": 27.1
+    },
+    "Kit Carson": {
+     "ARTHRITIS": 29.4,
+     "BPHIGH": 33.3,
+     "CHD": 7.7,
+     "DIABETES": 11.4,
+     "HEARING": 9.1,
+     "OBESITY": 29.4
+    },
+    "La Plata": {
+     "ARTHRITIS": 27.0,
+     "BPHIGH": 28.6,
+     "CHD": 6.2,
+     "DIABETES": 9.3,
+     "HEARING": 7.4,
+     "OBESITY": 20.9
+    },
+    "Lake": {
+     "ARTHRITIS": 21.7,
+     "BPHIGH": 26.4,
+     "CHD": 4.9,
+     "DIABETES": 8.4,
+     "HEARING": 6.1,
+     "OBESITY": 23.9
+    },
+    "Larimer": {
+     "ARTHRITIS": 22.7,
+     "BPHIGH": 25.6,
+     "CHD": 5.1,
+     "DIABETES": 7.3,
+     "HEARING": 6.3,
+     "OBESITY": 23.5
+    },
+    "Las Animas": {
+     "ARTHRITIS": 30.6,
+     "BPHIGH": 35.5,
+     "CHD": 8.5,
+     "DIABETES": 13.7,
+     "HEARING": 9.9,
+     "OBESITY": 32.5
+    },
+    "Lincoln": {
+     "ARTHRITIS": 27.3,
+     "BPHIGH": 32.6,
+     "CHD": 7.3,
+     "DIABETES": 10.8,
+     "HEARING": 8.7,
+     "OBESITY": 29.8
+    },
+    "Logan": {
+     "ARTHRITIS": 27.4,
+     "BPHIGH": 33.6,
+     "CHD": 7.5,
+     "DIABETES": 11.2,
+     "HEARING": 8.9,
+     "OBESITY": 29.7
+    },
+    "Mesa": {
+     "ARTHRITIS": 28.2,
+     "BPHIGH": 31.1,
+     "CHD": 6.7,
+     "DIABETES": 9.8,
+     "HEARING": 8.1,
+     "OBESITY": 29.8
+    },
+    "Mineral": {
+     "ARTHRITIS": 31.0,
+     "BPHIGH": 34.3,
+     "CHD": 7.3,
+     "DIABETES": 10.5,
+     "HEARING": 8.4,
+     "OBESITY": 25.7
+    },
+    "Moffat": {
+     "ARTHRITIS": 27.6,
+     "BPHIGH": 32.3,
+     "CHD": 7.0,
+     "DIABETES": 10.8,
+     "HEARING": 8.2,
+     "OBESITY": 28.5
+    },
+    "Montezuma": {
+     "ARTHRITIS": 30.4,
+     "BPHIGH": 33.9,
+     "CHD": 7.8,
+     "DIABETES": 11.8,
+     "HEARING": 9.3,
+     "OBESITY": 28.4
+    },
+    "Montrose": {
+     "ARTHRITIS": 30.8,
+     "BPHIGH": 34.1,
+     "CHD": 8.0,
+     "DIABETES": 11.5,
+     "HEARING": 9.3,
+     "OBESITY": 27.5
+    },
+    "Morgan": {
+     "ARTHRITIS": 25.7,
+     "BPHIGH": 31.6,
+     "CHD": 6.6,
+     "DIABETES": 10.9,
+     "HEARING": 7.9,
+     "OBESITY": 32.1
+    },
+    "Otero": {
+     "ARTHRITIS": 29.8,
+     "BPHIGH": 35.6,
+     "CHD": 8.5,
+     "DIABETES": 14.5,
+     "HEARING": 10.0,
+     "OBESITY": 34.6
+    },
+    "Ouray": {
+     "ARTHRITIS": 31.2,
+     "BPHIGH": 34.0,
+     "CHD": 7.0,
+     "DIABETES": 10.0,
+     "HEARING": 8.2,
+     "OBESITY": 23.3
+    },
+    "Park": {
+     "ARTHRITIS": 30.3,
+     "BPHIGH": 32.7,
+     "CHD": 6.7,
+     "DIABETES": 10.2,
+     "HEARING": 7.6,
+     "OBESITY": 23.5
+    },
+    "Phillips": {
+     "ARTHRITIS": 29.6,
+     "BPHIGH": 34.1,
+     "CHD": 8.0,
+     "DIABETES": 11.9,
+     "HEARING": 9.5,
+     "OBESITY": 28.9
+    },
+    "Pitkin": {
+     "ARTHRITIS": 26.0,
+     "BPHIGH": 28.8,
+     "CHD": 5.8,
+     "DIABETES": 8.4,
+     "HEARING": 6.9,
+     "OBESITY": 20.7
+    },
+    "Prowers": {
+     "ARTHRITIS": 27.6,
+     "BPHIGH": 32.5,
+     "CHD": 7.6,
+     "DIABETES": 12.6,
+     "HEARING": 8.9,
+     "OBESITY": 29.2
+    },
+    "Pueblo": {
+     "ARTHRITIS": 28.8,
+     "BPHIGH": 32.2,
+     "CHD": 6.9,
+     "DIABETES": 12.3,
+     "HEARING": 8.3,
+     "OBESITY": 32.1
+    },
+    "Rio Blanco": {
+     "ARTHRITIS": 27.0,
+     "BPHIGH": 31.1,
+     "CHD": 6.5,
+     "DIABETES": 9.6,
+     "HEARING": 7.7,
+     "OBESITY": 26.7
+    },
+    "Rio Grande": {
+     "ARTHRITIS": 28.4,
+     "BPHIGH": 33.4,
+     "CHD": 7.4,
+     "DIABETES": 12.2,
+     "HEARING": 8.7,
+     "OBESITY": 27.7
+    },
+    "Routt": {
+     "ARTHRITIS": 24.7,
+     "BPHIGH": 27.9,
+     "CHD": 5.5,
+     "DIABETES": 8.3,
+     "HEARING": 6.6,
+     "OBESITY": 23.7
+    },
+    "Saguache": {
+     "ARTHRITIS": 32.0,
+     "BPHIGH": 38.3,
+     "CHD": 9.3,
+     "DIABETES": 15.1,
+     "HEARING": 10.3,
+     "OBESITY": 29.1
+    },
+    "San Juan": {
+     "ARTHRITIS": 28.2,
+     "BPHIGH": 32.4,
+     "CHD": 6.9,
+     "DIABETES": 10.2,
+     "HEARING": 8.2,
+     "OBESITY": 26.4
+    },
+    "San Miguel": {
+     "ARTHRITIS": 25.1,
+     "BPHIGH": 28.7,
+     "CHD": 5.7,
+     "DIABETES": 8.7,
+     "HEARING": 6.6,
+     "OBESITY": 26.3
+    },
+    "Sedgwick": {
+     "ARTHRITIS": 33.6,
+     "BPHIGH": 37.8,
+     "CHD": 9.3,
+     "DIABETES": 13.0,
+     "HEARING": 10.7,
+     "OBESITY": 28.0
+    },
+    "Summit": {
+     "ARTHRITIS": 22.7,
+     "BPHIGH": 26.3,
+     "CHD": 5.0,
+     "DIABETES": 7.9,
+     "HEARING": 6.1,
+     "OBESITY": 24.4
+    },
+    "Teller": {
+     "ARTHRITIS": 30.5,
+     "BPHIGH": 33.4,
+     "CHD": 6.9,
+     "DIABETES": 10.2,
+     "HEARING": 7.9,
+     "OBESITY": 24.1
+    },
+    "Washington": {
+     "ARTHRITIS": 29.4,
+     "BPHIGH": 32.6,
+     "CHD": 7.4,
+     "DIABETES": 10.5,
+     "HEARING": 8.8,
+     "OBESITY": 26.4
+    },
+    "Weld": {
+     "ARTHRITIS": 21.5,
+     "BPHIGH": 27.8,
+     "CHD": 5.1,
+     "DIABETES": 9.5,
+     "HEARING": 6.3,
+     "OBESITY": 33.8
+    },
+    "Yuma": {
+     "ARTHRITIS": 27.1,
+     "BPHIGH": 31.4,
+     "CHD": 7.2,
+     "DIABETES": 10.9,
+     "HEARING": 8.6,
+     "OBESITY": 28.4
+    }
+   }
+  },
+  "UT": {
+   "county_count": 29,
+   "counties": {
+    "Beaver": {
+     "ARTHRITIS": 24.6,
+     "BPHIGH": 29.6,
+     "CHD": 5.7,
+     "DIABETES": 9.8,
+     "HEARING": 7.6,
+     "OBESITY": 28.5
+    },
+    "Box Elder": {
+     "ARTHRITIS": 23.3,
+     "BPHIGH": 28.9,
+     "CHD": 5.4,
+     "DIABETES": 9.3,
+     "HEARING": 7.2,
+     "OBESITY": 32.6
+    },
+    "Cache": {
+     "ARTHRITIS": 20.1,
+     "BPHIGH": 24.6,
+     "CHD": 4.3,
+     "DIABETES": 7.8,
+     "HEARING": 6.2,
+     "OBESITY": 27.9
+    },
+    "Carbon": {
+     "ARTHRITIS": 30.3,
+     "BPHIGH": 33.6,
+     "CHD": 7.4,
+     "DIABETES": 12.8,
+     "HEARING": 9.4,
+     "OBESITY": 35.0
+    },
+    "Daggett": {
+     "ARTHRITIS": 33.3,
+     "BPHIGH": 39.6,
+     "CHD": 8.9,
+     "DIABETES": 13.5,
+     "HEARING": 10.9,
+     "OBESITY": 33.1
+    },
+    "Davis": {
+     "ARTHRITIS": 21.4,
+     "BPHIGH": 26.9,
+     "CHD": 4.5,
+     "DIABETES": 8.2,
+     "HEARING": 6.1,
+     "OBESITY": 32.7
+    },
+    "Duchesne": {
+     "ARTHRITIS": 26.2,
+     "BPHIGH": 31.3,
+     "CHD": 6.4,
+     "DIABETES": 11.0,
+     "HEARING": 8.2,
+     "OBESITY": 31.6
+    },
+    "Emery": {
+     "ARTHRITIS": 27.8,
+     "BPHIGH": 34.0,
+     "CHD": 6.8,
+     "DIABETES": 11.2,
+     "HEARING": 8.8,
+     "OBESITY": 30.6
+    },
+    "Garfield": {
+     "ARTHRITIS": 29.5,
+     "BPHIGH": 34.7,
+     "CHD": 7.3,
+     "DIABETES": 11.6,
+     "HEARING": 9.3,
+     "OBESITY": 28.6
+    },
+    "Grand": {
+     "ARTHRITIS": 28.7,
+     "BPHIGH": 33.3,
+     "CHD": 6.9,
+     "DIABETES": 11.2,
+     "HEARING": 8.8,
+     "OBESITY": 28.3
+    },
+    "Iron": {
+     "ARTHRITIS": 23.7,
+     "BPHIGH": 27.6,
+     "CHD": 5.6,
+     "DIABETES": 9.4,
+     "HEARING": 7.4,
+     "OBESITY": 35.3
+    },
+    "Juab": {
+     "ARTHRITIS": 23.3,
+     "BPHIGH": 28.5,
+     "CHD": 5.3,
+     "DIABETES": 9.0,
+     "HEARING": 7.1,
+     "OBESITY": 32.6
+    },
+    "Kane": {
+     "ARTHRITIS": 30.8,
+     "BPHIGH": 35.6,
+     "CHD": 7.3,
+     "DIABETES": 11.8,
+     "HEARING": 9.2,
+     "OBESITY": 33.3
+    },
+    "Millard": {
+     "ARTHRITIS": 26.3,
+     "BPHIGH": 33.8,
+     "CHD": 7.1,
+     "DIABETES": 11.8,
+     "HEARING": 9.0,
+     "OBESITY": 34.1
+    },
+    "Morgan": {
+     "ARTHRITIS": 23.0,
+     "BPHIGH": 27.9,
+     "CHD": 4.7,
+     "DIABETES": 8.1,
+     "HEARING": 6.5,
+     "OBESITY": 25.0
+    },
+    "Piute": {
+     "ARTHRITIS": 35.1,
+     "BPHIGH": 40.6,
+     "CHD": 10.2,
+     "DIABETES": 15.2,
+     "HEARING": 12.4,
+     "OBESITY": 33.0
+    },
+    "Rich": {
+     "ARTHRITIS": 29.4,
+     "BPHIGH": 33.9,
+     "CHD": 7.3,
+     "DIABETES": 11.6,
+     "HEARING": 9.3,
+     "OBESITY": 32.7
+    },
+    "Salt Lake": {
+     "ARTHRITIS": 21.2,
+     "BPHIGH": 27.5,
+     "CHD": 4.4,
+     "DIABETES": 8.5,
+     "HEARING": 6.1,
+     "OBESITY": 29.9
+    },
+    "San Juan": {
+     "ARTHRITIS": 28.8,
+     "BPHIGH": 37.3,
+     "CHD": 8.0,
+     "DIABETES": 15.4,
+     "HEARING": 10.8,
+     "OBESITY": 34.2
+    },
+    "Sanpete": {
+     "ARTHRITIS": 25.0,
+     "BPHIGH": 28.4,
+     "CHD": 6.1,
+     "DIABETES": 10.4,
+     "HEARING": 8.1,
+     "OBESITY": 29.2
+    },
+    "Sevier": {
+     "ARTHRITIS": 28.1,
+     "BPHIGH": 32.9,
+     "CHD": 6.4,
+     "DIABETES": 10.5,
+     "HEARING": 8.3,
+     "OBESITY": 36.4
+    },
+    "Summit": {
+     "ARTHRITIS": 24.6,
+     "BPHIGH": 27.7,
+     "CHD": 5.0,
+     "DIABETES": 8.7,
+     "HEARING": 6.5,
+     "OBESITY": 19.8
+    },
+    "Tooele": {
+     "ARTHRITIS": 23.0,
+     "BPHIGH": 28.8,
+     "CHD": 4.3,
+     "DIABETES": 8.9,
+     "HEARING": 6.3,
+     "OBESITY": 37.6
+    },
+    "Uintah": {
+     "ARTHRITIS": 26.4,
+     "BPHIGH": 30.7,
+     "CHD": 5.8,
+     "DIABETES": 10.5,
+     "HEARING": 7.9,
+     "OBESITY": 35.5
+    },
+    "Utah": {
+     "ARTHRITIS": 17.1,
+     "BPHIGH": 23.0,
+     "CHD": 3.7,
+     "DIABETES": 6.9,
+     "HEARING": 5.3,
+     "OBESITY": 29.7
+    },
+    "Wasatch": {
+     "ARTHRITIS": 23.0,
+     "BPHIGH": 27.1,
+     "CHD": 5.0,
+     "DIABETES": 8.4,
+     "HEARING": 6.5,
+     "OBESITY": 24.3
+    },
+    "Washington": {
+     "ARTHRITIS": 28.3,
+     "BPHIGH": 34.2,
+     "CHD": 6.9,
+     "DIABETES": 10.7,
+     "HEARING": 9.4,
+     "OBESITY": 33.1
+    },
+    "Wayne": {
+     "ARTHRITIS": 32.3,
+     "BPHIGH": 37.9,
+     "CHD": 8.3,
+     "DIABETES": 13.1,
+     "HEARING": 10.1,
+     "OBESITY": 34.3
+    },
+    "Weber": {
+     "ARTHRITIS": 24.6,
+     "BPHIGH": 29.4,
+     "CHD": 4.9,
+     "DIABETES": 9.0,
+     "HEARING": 6.6,
+     "OBESITY": 34.7
+    }
+   }
+  }
+ }
+}

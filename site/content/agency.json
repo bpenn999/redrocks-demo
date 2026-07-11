@@ -89,12 +89,12 @@
     "url": "https://www.cdc.gov/places/",
     "intro": "The right Medicare plan depends on your health. Here's how common key conditions are among Salt Lake County adults — a reason to check each plan's drug formulary, specialist network, and extra benefits before you enroll.",
     "stats": [
-      { "value": "28.1%", "label": "High blood pressure" },
+      { "value": "27.5%", "label": "High blood pressure" },
       { "value": "29.9%", "label": "Obesity" },
       { "value": "8.5%", "label": "Diagnosed diabetes" },
-      { "value": "4.6%", "label": "Coronary heart disease" },
-      { "value": "21.8%", "label": "Arthritis" },
-      { "value": "6.4%", "label": "Hearing disability" }
+      { "value": "4.4%", "label": "Coronary heart disease" },
+      { "value": "21.2%", "label": "Arthritis" },
+      { "value": "6.1%", "label": "Hearing disability" }
     ]
   },
   "productLines": [
