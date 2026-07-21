@@ -1,0 +1,21 @@
+name = "mom-chat"
+main = "worker/worker.js"
+compatibility_date = "2026-07-01"
+
+# Serves chatbot/widget/* as static files (embed.js, widget.js) with CDN caching;
+# anything under /api/* falls through to the Worker.
+[assets]
+directory = "widget"
+
+[vars]
+AMBROSE_TOOL = "ask_website___medicare"
+BOOKING_TZ = "America/Denver"
+ALLOWED_ORIGINS = "*"        # tighten to "https://medicareonmain.com" after testing
+# GHL_LOCATION_ID = "..."    # GHL: Settings -> Business Profile (sub-account id)
+# GHL_CALENDAR_ID = "..."    # GHL: Calendars -> your booking calendar -> id
+
+# Secrets (never in this file) — set with:
+#   wrangler secret put AMBROSE_MCP_URL
+#   wrangler secret put AMBROSE_MCP_TOKEN
+#   wrangler secret put GHL_TOKEN
+#   wrangler secret put ANTHROPIC_API_KEY   (optional fallback)
